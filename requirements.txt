@@ -1,0 +1,4 @@
+enappsys-data-retrieval-v2 @ git+https://git.assembla.com/neta-reports.nl-ds-data_retrieval.git@47287128d2df7e7f56d13eb366084c01c518de9b
+openpyxl
+streamlit
+plotly
