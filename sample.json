@@ -1,0 +1,1608 @@
+{
+    "sk/elec/avail/aggregated/chart": {
+        "INSTALLED CAPACITY": "entsoe_installed_capacity_per_unit",
+        "AGGREGATED AVAILABILITY": "CALCULATED_AVAILABILITY",
+        "AGGREGATED AVAILABILITY (D-1)": "CALCULATED_AVAILABILITY_DM01",
+        "DEMAND FORECAST (TSO)": "ENTSOE_DAY_AHEAD_TOTAL_LOAD_FORECAST"
+    },
+    "sk/elec/avail/byunit/chart": {
+        "INSTALLED CAPACITY": "ENTSOE_INSTALLED_CAPACITY_PER_UNIT",
+        "AVAILABILITY": "CALCULATED_AVAILABILITY",
+        "AVAILABILITY (D-1)": "CALCULATED_AVAILABILITY_DM01"
+    },
+    "sk/elec/avail/summary/dm01/chart": {
+        "INTERCONNECTORS": "SK_NTC_BEST",
+        "PUMPED STORAGE": "CALCULATED_AVAILABILITY_DM01",
+        "LIGNITE": "CALCULATED_AVAILABILITY_DM01",
+        "COAL": "CALCULATED_AVAILABILITY_DM01",
+        "CCGT": "CALCULATED_AVAILABILITY_DM01",
+        "HYDRO (RIVER)": "CALCULATED_AVAILABILITY_DM01",
+        "HYDRO (RESERVOIR)": "CALCULATED_AVAILABILITY_DM01",
+        "SOLAR FORECAST": "SK_SOLAR_FORECAST",
+        "WIND FORECAST": "SK_WIND_FORECAST_RAW_FORECASTS",
+        "NUCLEAR": "CALCULATED_AVAILABILITY_DM01",
+        "DEMAND FORECAST": "SK_DEMAND_FORECAST"
+    },
+    "sk/elec/avail/summary/chart": {
+        "INTERCONNECTORS": "JAO_FB_MAXNETPOSITION",
+        "PUMPED STORAGE": "CALCULATED_AVAILABILITY",
+        "LIGNITE": "CALCULATED_AVAILABILITY",
+        "COAL": "CALCULATED_AVAILABILITY",
+        "CCGT": "CALCULATED_AVAILABILITY",
+        "HYDRO (RIVER)": "CALCULATED_AVAILABILITY",
+        "HYDRO (RESERVOIR)": "CALCULATED_AVAILABILITY",
+        "SOLAR FORECAST": "SK_SOLAR_FORECAST",
+        "WIND FORECAST": "SK_WIND_FORECAST_RAW_FORECASTS",
+        "NUCLEAR": "CALCULATED_AVAILABILITY",
+        "SCHEDULED IMPORTS": "entsoe_scheduled_commercial_exchanges",
+        "DEMAND FORECAST SENSITIVITY": "SK_DEMAND_FORECAST",
+        "DEMAND FORECAST": "SK_DEMAND_FORECAST",
+        "DEMAND FORECAST (TSO)": "entsoe_day_ahead_total_load_forecast"
+    },
+    "sk/elec/avail/capacity/all/chart": {
+        "PUMPED STORAGE": "ENTSOE_INSTALLED_CAPACITY_PER_UNIT",
+        "LIGNITE": "ENTSOE_INSTALLED_CAPACITY_PER_UNIT",
+        "COAL": "ENTSOE_INSTALLED_CAPACITY_PER_UNIT",
+        "CCGT": "ENTSOE_INSTALLED_CAPACITY_PER_UNIT",
+        "HYDRO RIVER": "ENTSOE_INSTALLED_CAPACITY_PER_UNIT",
+        "HYDRO RESERVOIR": "ENTSOE_INSTALLED_CAPACITY_PER_UNIT",
+        "SOLAR": "SK_INFERRED_CAPACITY",
+        "WIND ONSHORE": "SK_INFERRED_CAPACITY",
+        "NUCLEAR": "ENTSOE_INSTALLED_CAPACITY_PER_UNIT"
+    },
+    "sk/elec/balancing/reserves/afrr/chart": {
+        "AVAILABLE (UP)": "entsoe_balancing_reserves_accepted_aggregated_offers",
+        "ACTIVATED (UP)": "entsoe_balancing_reserves_activated_balancing_energy",
+        "AVAILABLE (DOWN)": "entsoe_balancing_reserves_accepted_aggregated_offers",
+        "ACTIVATED (DOWN)": "entsoe_balancing_reserves_activated_balancing_energy",
+        "ACTIVATED PRICE (DOWN)": "entsoe_balancing_reserves_prices_activated_balancing_energy",
+        "ACTIVATED PRICE (UP)": "entsoe_balancing_reserves_prices_activated_balancing_energy",
+        "AVAILABLE PRICE (YEARLY-UP)": "ENTSOE_PRICE_BALANCING_RESERVES",
+        "AVAILABLE PRICE (MONTHLY-UP)": "ENTSOE_PRICE_BALANCING_RESERVES",
+        "AVAILABLE PRICE (DAILY-UP)": "ENTSOE_PRICE_BALANCING_RESERVES",
+        "AVAILABLE PRICE (YEARLY-DOWN)": "ENTSOE_PRICE_BALANCING_RESERVES",
+        "AVAILABLE PRICE (MONTHLY-DOWN)": "ENTSOE_PRICE_BALANCING_RESERVES",
+        "AVAILABLE PRICE (DAILY-DOWN)": "ENTSOE_PRICE_BALANCING_RESERVES"
+    },
+    "sk/elec/balancing/reserves/available/chart": {
+        "FCR (UP)": "entsoe_balancing_reserves_accepted_aggregated_offers",
+        "MFRR (UP)": "entsoe_balancing_reserves_accepted_aggregated_offers",
+        "AFRR (UP)": "entsoe_balancing_reserves_accepted_aggregated_offers",
+        "FCR (DOWN)": "entsoe_balancing_reserves_accepted_aggregated_offers",
+        "MFRR (DOWN)": "entsoe_balancing_reserves_accepted_aggregated_offers",
+        "AFRR (DOWN)": "entsoe_balancing_reserves_accepted_aggregated_offers"
+    },
+    "sk/elec/balancing/reserves/fcr/chart": {
+        "AVAILABLE (UP)": "entsoe_balancing_reserves_accepted_aggregated_offers",
+        "ACTIVATED (UP)": "entsoe_balancing_reserves_activated_balancing_energy",
+        "AVAILABLE (DOWN)": "entsoe_balancing_reserves_accepted_aggregated_offers",
+        "ACTIVATED (DOWN)": "entsoe_balancing_reserves_activated_balancing_energy",
+        "ACTIVATED PRICE (DOWN)": "entsoe_balancing_reserves_prices_activated_balancing_energy",
+        "ACTIVATED PRICE (UP)": "entsoe_balancing_reserves_prices_activated_balancing_energy",
+        "AVAILABLE PRICE (YEARLY-SYMMETRIC)": "ENTSOE_PRICE_BALANCING_RESERVES",
+        "AVAILABLE PRICE (MONTHLY-SYMMETRIC)": "ENTSOE_PRICE_BALANCING_RESERVES",
+        "AVAILABLE PRICE (DAILY-SYMMETRIC)": "ENTSOE_PRICE_BALANCING_RESERVES"
+    },
+    "sk/elec/balancing/reserves/mfrr/chart": {
+        "AVAILABLE (UP)": "entsoe_balancing_reserves_accepted_aggregated_offers",
+        "ACTIVATED (UP)": "entsoe_balancing_reserves_activated_balancing_energy",
+        "AVAILABLE (DOWN)": "entsoe_balancing_reserves_accepted_aggregated_offers",
+        "ACTIVATED (DOWN)": "entsoe_balancing_reserves_activated_balancing_energy",
+        "ACTIVATED PRICE (DOWN)": "entsoe_balancing_reserves_prices_activated_balancing_energy",
+        "ACTIVATED PRICE (UP)": "entsoe_balancing_reserves_prices_activated_balancing_energy",
+        "AVAILABLE PRICE (YEARLY-UP)": "ENTSOE_PRICE_BALANCING_RESERVES",
+        "AVAILABLE PRICE (MONTHLY-UP)": "ENTSOE_PRICE_BALANCING_RESERVES",
+        "AVAILABLE PRICE (DAILY-UP)": "ENTSOE_PRICE_BALANCING_RESERVES",
+        "AVAILABLE PRICE (YEARLY-DOWN)": "ENTSOE_PRICE_BALANCING_RESERVES",
+        "AVAILABLE PRICE (MONTHLY-DOWN)": "ENTSOE_PRICE_BALANCING_RESERVES",
+        "AVAILABLE PRICE (DAILY-DOWN)": "ENTSOE_PRICE_BALANCING_RESERVES"
+    },
+    "sk/elec/balancing/reserves/chart": {
+        "FCR (UP)": "entsoe_balancing_reserves_activated_balancing_energy",
+        "MFRR (UP)": "entsoe_balancing_reserves_activated_balancing_energy",
+        "AFRR (UP)": "entsoe_balancing_reserves_activated_balancing_energy",
+        "FCR (DOWN)": "entsoe_balancing_reserves_activated_balancing_energy",
+        "MFRR (DOWN)": "entsoe_balancing_reserves_activated_balancing_energy",
+        "AFRR (DOWN)": "entsoe_balancing_reserves_activated_balancing_energy",
+        "NET IMBALANCE": "ENTSOE_TOTAL_IMBALANCE_VOLUMES"
+    },
+    "sk/elec/balancing/igcc/chart": {
+        "AUSTRIA (IMPORT)": "REGELLEISTUNG_IGCC_VOLUME",
+        "AUSTRIA (EXPORT)": "REGELLEISTUNG_IGCC_VOLUME",
+        "BELGIUM (IMPORT)": "REGELLEISTUNG_IGCC_VOLUME",
+        "BELGIUM (EXPORT)": "REGELLEISTUNG_IGCC_VOLUME",
+        "CROATIA (IMPORT)": "REGELLEISTUNG_IGCC_VOLUME",
+        "CROATIA (EXPORT)": "REGELLEISTUNG_IGCC_VOLUME",
+        "CZECH (IMPORT)": "REGELLEISTUNG_IGCC_VOLUME",
+        "CZECH (EXPORT)": "REGELLEISTUNG_IGCC_VOLUME",
+        "DENMARK (IMPORT)": "REGELLEISTUNG_IGCC_VOLUME",
+        "DENMARK (EXPORT)": "REGELLEISTUNG_IGCC_VOLUME",
+        "FRANCE (IMPORT)": "REGELLEISTUNG_IGCC_VOLUME",
+        "FRANCE (EXPORT)": "REGELLEISTUNG_IGCC_VOLUME",
+        "GERMANY (IMPORT)": "REGELLEISTUNG_IGCC_VOLUME",
+        "GERMANY (EXPORT)": "REGELLEISTUNG_IGCC_VOLUME",
+        "HUNGARY (IMPORT)": "ENTSOE_NETTED_EXCHANGED_VOLUMES",
+        "HUNGARY (EXPORT)": "ENTSOE_NETTED_EXCHANGED_VOLUMES",
+        "ITALY (IMPORT)": "ENTSOE_NETTED_EXCHANGED_VOLUMES",
+        "ITALY (EXPORT)": "ENTSOE_NETTED_EXCHANGED_VOLUMES",
+        "NETHERLANDS (IMPORT)": "REGELLEISTUNG_IGCC_VOLUME",
+        "NETHERLANDS (EXPORT)": "REGELLEISTUNG_IGCC_VOLUME",
+        "POLAND (IMPORT)": "ENTSOE_NETTED_EXCHANGED_VOLUMES",
+        "POLAND (EXPORT)": "ENTSOE_NETTED_EXCHANGED_VOLUMES",
+        "PORTUGAL (IMPORT)": "ENTSOE_NETTED_EXCHANGED_VOLUMES",
+        "PORTUGAL (EXPORT)": "ENTSOE_NETTED_EXCHANGED_VOLUMES",
+        "ROMANIA (IMPORT)": "ENTSOE_NETTED_EXCHANGED_VOLUMES",
+        "ROMANIA (EXPORT)": "ENTSOE_NETTED_EXCHANGED_VOLUMES",
+        "SERBIA (IMPORT)": "ENTSOE_NETTED_EXCHANGED_VOLUMES",
+        "SERBIA (EXPORT)": "ENTSOE_NETTED_EXCHANGED_VOLUMES",
+        "SLOVENIA (IMPORT)": "REGELLEISTUNG_IGCC_VOLUME",
+        "SLOVENIA (EXPORT)": "REGELLEISTUNG_IGCC_VOLUME",
+        "SPAIN (IMPORT)": "ENTSOE_NETTED_EXCHANGED_VOLUMES",
+        "SPAIN (EXPORT)": "ENTSOE_NETTED_EXCHANGED_VOLUMES",
+        "SWITZERLAND (IMPORT)": "REGELLEISTUNG_IGCC_VOLUME",
+        "SWITZERLAND (EXPORT)": "REGELLEISTUNG_IGCC_VOLUME"
+    },
+    "sk/elec/balancing/nivanalysis/chart": {
+        "FCR ACTIVATED PRICE (UP)": "ENTSOE_BALANCING_RESERVES_PRICES_ACTIVATED_BALANCING_ENERGY",
+        "MFRR ACTIVATED PRICE (UP)": "ENTSOE_BALANCING_RESERVES_PRICES_ACTIVATED_BALANCING_ENERGY",
+        "AFRR ACTIVATED PRICE (UP)": "ENTSOE_BALANCING_RESERVES_PRICES_ACTIVATED_BALANCING_ENERGY",
+        "FCR ACTIVATED PRICE (DOWN)": "ENTSOE_BALANCING_RESERVES_PRICES_ACTIVATED_BALANCING_ENERGY",
+        "MFRR ACTIVATED PRICE (DOWN)": "ENTSOE_BALANCING_RESERVES_PRICES_ACTIVATED_BALANCING_ENERGY",
+        "AFRR ACTIVATED PRICE (DOWN)": "ENTSOE_BALANCING_RESERVES_PRICES_ACTIVATED_BALANCING_ENERGY",
+        "DAY AHEAD PRICE": "ENTSOE_DAY_AHEAD_PRICES",
+        "IMBALANCE PRICE - POSITIVE": "ENTSOE_IMBALANCE_PRICES_POS",
+        "IMBALANCE PRICE - NEGATIVE": "ENTSOE_IMBALANCE_PRICES_NEG",
+        "FCR (UP)": "ENTSOE_BALANCING_RESERVES_ACTIVATED_BALANCING_ENERGY",
+        "MFRR (UP)": "ENTSOE_BALANCING_RESERVES_ACTIVATED_BALANCING_ENERGY",
+        "AFRR (UP)": "ENTSOE_BALANCING_RESERVES_ACTIVATED_BALANCING_ENERGY",
+        "FCR (DOWN)": "ENTSOE_BALANCING_RESERVES_ACTIVATED_BALANCING_ENERGY",
+        "MFRR (DOWN)": "ENTSOE_BALANCING_RESERVES_ACTIVATED_BALANCING_ENERGY",
+        "AFRR (DOWN)": "ENTSOE_BALANCING_RESERVES_ACTIVATED_BALANCING_ENERGY",
+        "NET IMBALANCE": "ENTSOE_TOTAL_IMBALANCE_VOLUMES"
+    },
+    "sk/elec/demand/actual/chart": {
+        "MIN": "ENTSOE_ACTUAL_TOTAL_LOAD",
+        "ANOMALY FREE DEMAND": "SK_ANOMALY_FREE_DEMAND",
+        "AVERAGE": "ENTSOE_ACTUAL_TOTAL_LOAD",
+        "MAX": "ENTSOE_ACTUAL_TOTAL_LOAD",
+        "FORECAST": "ENTSOE_DAY_AHEAD_TOTAL_LOAD_FORECAST"
+    },
+    "sk/elec/demand/data/averagebyyear/chart": {
+        "": "ENTSOE_ACTUAL_TOTAL_LOAD"
+    },
+    "sk/elec/demand/forecast/dayahead/chart": {
+        "Day Ahead Forecast": "SK_DEMAND_FORECAST",
+        "OUTTURN DEMAND": "ENTSOE_ACTUAL_TOTAL_LOAD",
+        "DEVIATION": "SK_DEMAND_ERROR"
+    },
+    "sk/elec/demand/anticipated/chart": {
+        "FORECAST SENSITIVITY (ENAPPSYS)": "SK_DEMAND_FORECAST",
+        "DEMAND FORECAST (TSO)": "ENTSOE_DAY_AHEAD_TOTAL_LOAD_FORECAST",
+        "DEMAND FORECAST D-1 (ENAPPSYS)": "SK_DEMAND_FORECAST",
+        "DEMAND FORECAST P10 (ENAPPSYS)": "SK_DEMAND_FORECAST",
+        "DEMAND FORECAST P90 (ENAPPSYS)": "SK_DEMAND_FORECAST",
+        "DEMAND FORECAST (ENAPPSYS)": "SK_DEMAND_FORECAST",
+        "DEMAND FORECAST UNADJUSTED (ENAPPSYS)": "SK_DEMAND_FORECAST",
+        "ACTUAL TOTAL LOAD": "ENTSOE_ACTUAL_TOTAL_LOAD"
+    },
+    "sk/elec/demand/anticipated/test/chart": {
+        "FORECAST SENSITIVITY (ENAPPSYS)": "SK_DEMAND_FORECAST",
+        "DEMAND FORECAST (ENTSOE)": "ENTSOE_DAY_AHEAD_TOTAL_LOAD_FORECAST",
+        "DEMAND FORECAST (EAS)": "SK_ADJUSTED_EAS_DEMAND_FORECASTS",
+        "DEMAND FORECAST D-1 (ENAPPSYS)": "SK_DEMAND_FORECAST",
+        "DEMAND FORECAST P10 (ENAPPSYS)": "SK_DEMAND_FORECAST",
+        "DEMAND FORECAST P90 (ENAPPSYS)": "SK_DEMAND_FORECAST",
+        "DEMAND FORECAST (ENAPPSYS) ": "SK_DEMAND_FORECAST",
+        "DEMAND FORECAST UNADJUSTED (ENAPPSYS)": "SK_DEMAND_FORECAST",
+        "ACTUAL TOTAL LOAD": "ENTSOE_ACTUAL_TOTAL_LOAD"
+    },
+    "sk/elec/demand/error/demand_error/chart": {
+        "ACTUAL TOTAL LOAD": "ENTSOE_ACTUAL_TOTAL_LOAD",
+        "ENTSOE FORECAST": "ENTSOE_DAY_AHEAD_TOTAL_LOAD_FORECAST",
+        "ENAPPSYS ADJUSTED FORECAST": "SK_DEMAND_FORECAST",
+        "ENAPPSYS UNADJUSTED FORECAST": "SK_DEMAND_FORECAST",
+        "ENAPPSYS DAY AHEAD FORECAST": "SK_DEMAND_FORECAST",
+        "ENTSOE ERROR": "SK_DEMAND_ERROR",
+        "ENAPPSYS ADJUSTED ERROR": "SK_DEMAND_ERROR",
+        "ENAPPSYS UNADJUSTED ERROR": "SK_DEMAND_ERROR",
+        "ENAPPSYS DAY AHEAD ERROR": "SK_DEMAND_ERROR",
+        "ENTSOE PERCENTAGE": "SK_DEMAND_ERROR",
+        "ENAPPSYS ADJUSTED PERCENTAGE": "SK_DEMAND_ERROR",
+        "ENAPPSYS UNADJUSTED PERCENTAGE": "SK_DEMAND_ERROR",
+        "ENAPPSYS DAY AHEAD PERCENTAGE": "SK_DEMAND_ERROR"
+    },
+    "sk/elec/demand/forecast/history/chart": {
+        "6pm D-7": "SK_DEMAND_FORECAST",
+        "6pm D-6": "SK_DEMAND_FORECAST",
+        "6pm D-5": "SK_DEMAND_FORECAST",
+        "6pm D-4": "SK_DEMAND_FORECAST",
+        "6pm D-3": "SK_DEMAND_FORECAST",
+        "6pm D-2": "SK_DEMAND_FORECAST",
+        "6pm D-1": "SK_DEMAND_FORECAST",
+        "Minus 6 Hours": "SK_DEMAND_FORECAST",
+        "Minus 12 Hours": "SK_DEMAND_FORECAST",
+        "Minus 18 Hours": "SK_DEMAND_FORECAST",
+        "TREND-ADJUSTED FORECAST": "SK_DEMAND_FORECAST",
+        "OUTTURN DEMAND": "ENTSOE_ACTUAL_TOTAL_LOAD"
+    },
+    "sk/elec/demand/summary/chart": {
+        "ACTUAL TOTAL LOAD": "ENTSOE_ACTUAL_TOTAL_LOAD",
+        "DEMAND FORECAST (ENAPPSYS)": "SK_DEMAND_FORECAST",
+        "DEMAND FORECAST": "ENTSOE_DAY_AHEAD_TOTAL_LOAD_FORECAST",
+        "BIOMASS": "entsoe_aggregated_generation_per_type",
+        "HYDRO (RESERVOIR)": "entsoe_aggregated_generation_per_type",
+        "HYDRO (RIVER)": "entsoe_aggregated_generation_per_type",
+        "SOLAR": "entsoe_aggregated_generation_per_type",
+        "WIND (ONSHORE)": "entsoe_aggregated_generation_per_type",
+        "NUCLEAR": "entsoe_aggregated_generation_per_type",
+        "SOLAR FORECAST": "SK_SOLAR_FORECAST",
+        "WIND ONSHORE FORECAST": "SK_WIND_FORECAST_RAW_FORECASTS",
+        "NUCLEAR AVAILABILITY": "CALCULATED_AVAILABILITY"
+    },
+    "sk/elec/demand/residual/chart": {
+        "FORECAST SENSITIVITY (ENAPPSYS)": "SK_RESIDUAL_LOAD_FORECAST",
+        "RESIDUAL DEMAND FORECAST (ENTSOE)": "SK_RESIDUAL_LOAD",
+        "RESIDUAL DEMAND FORECAST D-1 (ENAPPSYS)": "SK_RESIDUAL_LOAD_FORECAST",
+        "RESIDUAL DEMAND FORECAST P10 (ENAPPSYS)": "SK_RESIDUAL_LOAD_FORECAST",
+        "RESIDUAL DEMAND FORECAST P90 (ENAPPSYS)": "SK_RESIDUAL_LOAD_FORECAST",
+        "RESIDUAL DEMAND FORECAST (ENAPPSYS)": "SK_RESIDUAL_LOAD_FORECAST",
+        "RESIDUAL DEMAND FORECAST UNADJUSTED (ENAPPSYS)": "SK_RESIDUAL_LOAD_FORECAST",
+        "RESIDUAL DEMAND": "SK_RESIDUAL_LOAD"
+    },
+    "sk/elec/fuel/fuelmix/biomass/averagebyyear/chart": {
+        "": "ENTSOE_AGGREGATED_GENERATION_PER_TYPE"
+    },
+    "sk/elec/fuel/fuelmix/biomass/minavmax/chart": {
+        "MIN": "ENTSOE_AGGREGATED_GENERATION_PER_TYPE",
+        "AVERAGE": "ENTSOE_AGGREGATED_GENERATION_PER_TYPE",
+        "MAX": "ENTSOE_AGGREGATED_GENERATION_PER_TYPE"
+    },
+    "sk/elec/fuel/fuelmix/biomass/peakbyyear/chart": {
+        "": "ENTSOE_AGGREGATED_GENERATION_PER_TYPE"
+    },
+    "sk/elec/fuel/fuelmix/coal/averagebyyear/chart": {
+        "": "ENTSOE_AGGREGATED_GENERATION_PER_TYPE"
+    },
+    "sk/elec/fuel/fuelmix/coal/minavmax/chart": {
+        "MIN": "ENTSOE_AGGREGATED_GENERATION_PER_TYPE",
+        "AVERAGE": "ENTSOE_AGGREGATED_GENERATION_PER_TYPE",
+        "MAX": "ENTSOE_AGGREGATED_GENERATION_PER_TYPE"
+    },
+    "sk/elec/fuel/fuelmix/coal/peakbyyear/chart": {
+        "": "ENTSOE_AGGREGATED_GENERATION_PER_TYPE"
+    },
+    "sk/elec/fuel/fuelmix/gas/averagebyyear/chart": {
+        "": "ENTSOE_AGGREGATED_GENERATION_PER_TYPE"
+    },
+    "sk/elec/fuel/fuelmix/gas/minavmax/chart": {
+        "MIN": "ENTSOE_AGGREGATED_GENERATION_PER_TYPE",
+        "AVERAGE": "ENTSOE_AGGREGATED_GENERATION_PER_TYPE",
+        "MAX": "ENTSOE_AGGREGATED_GENERATION_PER_TYPE"
+    },
+    "sk/elec/fuel/fuelmix/gas/peakbyyear/chart": {
+        "": "ENTSOE_AGGREGATED_GENERATION_PER_TYPE"
+    },
+    "sk/elec/fuel/fuelmix/historic/chart": {},
+    "sk/elec/fuel/fuelmix/hydrores/averagebyyear/chart": {
+        "": "ENTSOE_AGGREGATED_GENERATION_PER_TYPE"
+    },
+    "sk/elec/fuel/fuelmix/hydrores/minavmax/chart": {
+        "MIN": "ENTSOE_AGGREGATED_GENERATION_PER_TYPE",
+        "AVERAGE": "ENTSOE_AGGREGATED_GENERATION_PER_TYPE",
+        "MAX": "ENTSOE_AGGREGATED_GENERATION_PER_TYPE"
+    },
+    "sk/elec/fuel/fuelmix/hydrores/peakbyyear/chart": {
+        "": "ENTSOE_AGGREGATED_GENERATION_PER_TYPE"
+    },
+    "sk/elec/fuel/fuelmix/hydroriver/averagebyyear/chart": {
+        "": "ENTSOE_AGGREGATED_GENERATION_PER_TYPE"
+    },
+    "sk/elec/fuel/fuelmix/hydroriver/minavmax/chart": {
+        "MIN": "ENTSOE_AGGREGATED_GENERATION_PER_TYPE",
+        "AVERAGE": "ENTSOE_AGGREGATED_GENERATION_PER_TYPE",
+        "MAX": "ENTSOE_AGGREGATED_GENERATION_PER_TYPE"
+    },
+    "sk/elec/fuel/fuelmix/hydroriver/peakbyyear/chart": {
+        "": "ENTSOE_AGGREGATED_GENERATION_PER_TYPE"
+    },
+    "sk/elec/fuel/fuelmix/lignite/averagebyyear/chart": {
+        "": "ENTSOE_AGGREGATED_GENERATION_PER_TYPE"
+    },
+    "sk/elec/fuel/fuelmix/lignite/minavmax/chart": {
+        "MIN": "ENTSOE_AGGREGATED_GENERATION_PER_TYPE",
+        "AVERAGE": "ENTSOE_AGGREGATED_GENERATION_PER_TYPE",
+        "MAX": "ENTSOE_AGGREGATED_GENERATION_PER_TYPE"
+    },
+    "sk/elec/fuel/fuelmix/lignite/peakbyyear/chart": {
+        "": "ENTSOE_AGGREGATED_GENERATION_PER_TYPE"
+    },
+    "sk/elec/fuel/fuelmix/nuclear/averagebyyear/chart": {
+        "": "ENTSOE_AGGREGATED_GENERATION_PER_TYPE"
+    },
+    "sk/elec/fuel/fuelmix/nuclear/minavmax/chart": {
+        "MIN": "ENTSOE_AGGREGATED_GENERATION_PER_TYPE",
+        "AVERAGE": "ENTSOE_AGGREGATED_GENERATION_PER_TYPE",
+        "MAX": "ENTSOE_AGGREGATED_GENERATION_PER_TYPE"
+    },
+    "sk/elec/fuel/fuelmix/nuclear/peakbyyear/chart": {
+        "": "ENTSOE_AGGREGATED_GENERATION_PER_TYPE"
+    },
+    "sk/elec/fuel/fuelmix/oil/averagebyyear/chart": {
+        "": "ENTSOE_AGGREGATED_GENERATION_PER_TYPE"
+    },
+    "sk/elec/fuel/fuelmix/oil/minavmax/chart": {
+        "MIN": "ENTSOE_AGGREGATED_GENERATION_PER_TYPE",
+        "AVERAGE": "ENTSOE_AGGREGATED_GENERATION_PER_TYPE",
+        "MAX": "ENTSOE_AGGREGATED_GENERATION_PER_TYPE"
+    },
+    "sk/elec/fuel/fuelmix/oil/peakbyyear/chart": {
+        "": "ENTSOE_AGGREGATED_GENERATION_PER_TYPE"
+    },
+    "sk/elec/fuel/fuelmix/other/averagebyyear/chart": {
+        "": "ENTSOE_AGGREGATED_GENERATION_PER_TYPE"
+    },
+    "sk/elec/fuel/fuelmix/other/minavmax/chart": {
+        "MIN": "ENTSOE_AGGREGATED_GENERATION_PER_TYPE",
+        "AVERAGE": "ENTSOE_AGGREGATED_GENERATION_PER_TYPE",
+        "MAX": "ENTSOE_AGGREGATED_GENERATION_PER_TYPE"
+    },
+    "sk/elec/fuel/fuelmix/other/peakbyyear/chart": {
+        "": "ENTSOE_AGGREGATED_GENERATION_PER_TYPE"
+    },
+    "sk/elec/fuel/fuelmix/otherrenew/averagebyyear/chart": {
+        "": "ENTSOE_AGGREGATED_GENERATION_PER_TYPE"
+    },
+    "sk/elec/fuel/fuelmix/otherrenew/minavmax/chart": {
+        "MIN": "ENTSOE_AGGREGATED_GENERATION_PER_TYPE",
+        "AVERAGE": "ENTSOE_AGGREGATED_GENERATION_PER_TYPE",
+        "MAX": "ENTSOE_AGGREGATED_GENERATION_PER_TYPE"
+    },
+    "sk/elec/fuel/fuelmix/otherrenew/peakbyyear/chart": {
+        "": "ENTSOE_AGGREGATED_GENERATION_PER_TYPE"
+    },
+    "sk/elec/fuel/fuelmix/chart": {
+        "INTERCONNECTORS": "entsoe_net_cross_border_physical_flows",
+        "PUMPED STORAGE": "entsoe_aggregated_generation_per_type",
+        "PUMPED STORAGE CONSUMPTION": "ENTSOE_AGGREGATED_GENERATION_PER_TYPE",
+        "OTHER": "entsoe_aggregated_generation_per_type",
+        "OIL": "entsoe_aggregated_generation_per_type",
+        "LIGNITE": "entsoe_aggregated_generation_per_type",
+        "COAL": "entsoe_aggregated_generation_per_type",
+        "GAS": "entsoe_aggregated_generation_per_type",
+        "OTHER RENEWABLES": "ENTSOE_AGGREGATED_GENERATION_PER_TYPE",
+        "BIOMASS": "entsoe_aggregated_generation_per_type",
+        "HYDRO (RIVER)": "entsoe_aggregated_generation_per_type",
+        "HYDRO (RESERVOIR)": "entsoe_aggregated_generation_per_type",
+        "SOLAR": "entsoe_aggregated_generation_per_type",
+        "WIND ONSHORE": "ENTSOE_AGGREGATED_GENERATION_PER_TYPE",
+        "NUCLEAR": "entsoe_aggregated_generation_per_type",
+        "DEMAND": "entsoe_actual_total_load"
+    },
+    "sk/elec/fuel/fuelmix/pumped/averagebyyear/chart": {
+        "": "ENTSOE_AGGREGATED_GENERATION_PER_TYPE"
+    },
+    "sk/elec/fuel/fuelmix/pumped/minavmax/chart": {
+        "MIN": "ENTSOE_AGGREGATED_GENERATION_PER_TYPE",
+        "AVERAGE": "ENTSOE_AGGREGATED_GENERATION_PER_TYPE",
+        "MAX": "ENTSOE_AGGREGATED_GENERATION_PER_TYPE"
+    },
+    "sk/elec/fuel/fuelmix/pumped/peakbyyear/chart": {
+        "": "ENTSOE_AGGREGATED_GENERATION_PER_TYPE"
+    },
+    "sk/elec/fuel/fuelmix/solar/averagebyyear/chart": {
+        "": "ENTSOE_AGGREGATED_GENERATION_PER_TYPE"
+    },
+    "sk/elec/fuel/fuelmix/solar/minavmax/chart": {
+        "MIN": "ENTSOE_AGGREGATED_GENERATION_PER_TYPE",
+        "AVERAGE": "ENTSOE_AGGREGATED_GENERATION_PER_TYPE",
+        "MAX": "ENTSOE_AGGREGATED_GENERATION_PER_TYPE"
+    },
+    "sk/elec/fuel/fuelmix/solar/peakbyyear/chart": {
+        "": "ENTSOE_AGGREGATED_GENERATION_PER_TYPE"
+    },
+    "sk/elec/fuel/fuelmix/wind/onshore/averagebyyear/chart": {
+        "": "ENTSOE_AGGREGATED_GENERATION_PER_TYPE"
+    },
+    "sk/elec/fuel/fuelmix/wind/onshore/minavmax/chart": {
+        "MIN": "ENTSOE_AGGREGATED_GENERATION_PER_TYPE",
+        "AVERAGE": "ENTSOE_AGGREGATED_GENERATION_PER_TYPE",
+        "MAX": "ENTSOE_AGGREGATED_GENERATION_PER_TYPE"
+    },
+    "sk/elec/fuel/fuelmix/wind/onshore/peakbyyear/chart": {
+        "": "ENTSOE_AGGREGATED_GENERATION_PER_TYPE"
+    },
+    "sk/elec/generation/gaa/chart": {
+        "CAPACITY": "ENTSOE_INSTALLED_CAPACITY_PER_UNIT",
+        "AVAILABILITY": "CALCULATED_AVAILABILITY",
+        "GENERATION": "ENTSOE_ACTUAL_GENERATION_OUTPUT_PER_UNIT"
+    },
+    "sk/elec/generation/forecast/chart": {
+        "GENERATION FORECAST": "entsoe_day_ahead_generation_forecast"
+    },
+    "sk/elec/generation/summary/chart": {
+        "INTERCONNECTORS": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS",
+        "PUMPED STORAGE": "ENTSOE_ACTUAL_GENERATION_OUTPUT_PER_UNIT",
+        "LIGNITE": "ENTSOE_ACTUAL_GENERATION_OUTPUT_PER_UNIT",
+        "COAL": "ENTSOE_ACTUAL_GENERATION_OUTPUT_PER_UNIT",
+        "GAS (CCGT)": "entsoe_actual_generation_output_per_unit",
+        "HYDRO (RIVER)": "ENTSOE_ACTUAL_GENERATION_OUTPUT_PER_UNIT",
+        "HYDRO (RESERVOIR)": "ENTSOE_ACTUAL_GENERATION_OUTPUT_PER_UNIT",
+        "NUCLEAR": "entsoe_actual_generation_output_per_unit",
+        "DEMAND": "entsoe_actual_total_load"
+    },
+    "sk/elec/generation/unitops/chart": {
+        "CAPACITY": "ENTSOE_INSTALLED_CAPACITY_PER_UNIT",
+        "AVAILABILITY": "CALCULATED_AVAILABILITY",
+        "AVAILABILITY (D-1)": "CALCULATED_AVAILABILITY_DM01",
+        "GENERATION": "ENTSOE_ACTUAL_GENERATION_OUTPUT_PER_UNIT"
+    },
+    "sk/elec/inter/ntc/stack/chart": {
+        "CZ to SK (from Czech Republic)": "SK_NTC_BEST",
+        "SK to CZ (to Czech Republic)": "SK_NTC_BEST",
+        "HU to SK (from Hungary)": "SK_NTC_BEST",
+        "SK to HU (to Hungary)": "SK_NTC_BEST",
+        "PL to SK (from Poland)": "SK_NTC_BEST",
+        "SK to PL (to Poland)": "SK_NTC_BEST",
+        "UA to LT (from Ukraine)": "SK_NTC_BEST",
+        "SK to UA (to Ukraine)": "SK_NTC_BEST",
+        "DA Schedule": "ENTSOE_DAY_AHEAD_SCHEDULED_COMMERCIAL_EXCHANGES",
+        "Schedule": "ENTSOE_SCHEDULED_COMMERCIAL_EXCHANGES",
+        "Flow": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS"
+    },
+    "sk/elec/inter/atc/implied/chart": {
+        "CZ to SK (Czech Republic)": "SK_INTERCONNECTOR_IMPLIED_ATC",
+        "SK to CZ (to Czech Republic)": "SK_INTERCONNECTOR_IMPLIED_ATC",
+        "HU to SK (from Hungary)": "SK_INTERCONNECTOR_IMPLIED_ATC",
+        "SK to HU (to Hungary)": "SK_INTERCONNECTOR_IMPLIED_ATC",
+        "PL to SK (from Poland)": "SK_INTERCONNECTOR_IMPLIED_ATC",
+        "SK to PL (to Poland)": "SK_INTERCONNECTOR_IMPLIED_ATC"
+    },
+    "sk/elec/inter/bycountry/cz/average/chart": {
+        "CZECH NET IMPORT": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS"
+    },
+    "sk/elec/inter/bycountry/cz/averagebyyear/chart": {
+        "": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS"
+    },
+    "sk/elec/inter/bycountry/cz/minavmax/chart": {
+        "MIN": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS",
+        "AVERAGE": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS",
+        "MAX": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS"
+    },
+    "sk/elec/inter/bycountry/cz/peak/chart": {
+        "PEAK NET IMPORT": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS"
+    },
+    "sk/elec/inter/bycountry/cz/peakbyyear/chart": {
+        "": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS"
+    },
+    "sk/elec/inter/bycountry/hu/average/chart": {
+        "HUNGARIAN NET IMPORT": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS"
+    },
+    "sk/elec/inter/bycountry/hu/averagebyyear/chart": {
+        "": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS"
+    },
+    "sk/elec/inter/bycountry/hu/minavmax/chart": {
+        "MIN": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS",
+        "AVERAGE": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS",
+        "MAX": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS"
+    },
+    "sk/elec/inter/bycountry/hu/peak/chart": {
+        "PEAK NET IMPORT": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS"
+    },
+    "sk/elec/inter/bycountry/hu/peakbyyear/chart": {
+        "": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS"
+    },
+    "sk/elec/inter/bycountry/net/average/chart": {
+        "NET IMPORT": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS"
+    },
+    "sk/elec/inter/bycountry/net/averagebyyear/chart": {
+        "": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS"
+    },
+    "sk/elec/inter/bycountry/net/minavmax/chart": {
+        "MIN": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS",
+        "AVERAGE": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS",
+        "MAX": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS"
+    },
+    "sk/elec/inter/bycountry/net/peak/chart": {
+        "PEAK NET IMPORT": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS"
+    },
+    "sk/elec/inter/bycountry/net/peakbyyear/chart": {
+        "": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS"
+    },
+    "sk/elec/inter/bycountry/chart": {
+        "DAY AHEAD NTC (to Slovakia)": "SK_NTC_BEST",
+        "DAY AHEAD NTC (from Slovakia)": "SK_NTC_BEST",
+        "CZ to SK (from Czech Republic)": "entsoe_net_cross_border_physical_flows",
+        "SK to CZ (to Czech Republic)": "entsoe_net_cross_border_physical_flows",
+        "HU to SK (from Hungary)": "entsoe_net_cross_border_physical_flows",
+        "SK to HU (to Hungary)": "entsoe_net_cross_border_physical_flows",
+        "PL to SK (from Poland)": "entsoe_net_cross_border_physical_flows",
+        "SK to PL (to Poland)": "entsoe_net_cross_border_physical_flows",
+        "UA to SK (from Ukraine)": "entsoe_net_cross_border_physical_flows",
+        "SK to UA (to Ukraine)": "entsoe_net_cross_border_physical_flows",
+        "NET IMPORTS": "entsoe_net_cross_border_physical_flows"
+    },
+    "sk/elec/inter/bycountry/pl/average/chart": {
+        "POLISH NET IMPORT": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS"
+    },
+    "sk/elec/inter/bycountry/pl/averagebyyear/chart": {
+        "": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS"
+    },
+    "sk/elec/inter/bycountry/pl/minavmax/chart": {
+        "MIN": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS",
+        "AVERAGE": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS",
+        "MAX": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS"
+    },
+    "sk/elec/inter/bycountry/pl/peak/chart": {
+        "PEAK NET IMPORT": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS"
+    },
+    "sk/elec/inter/bycountry/pl/peakbyyear/chart": {
+        "": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS"
+    },
+    "sk/elec/inter/bycountry/ua/average/chart": {
+        "UKRAINIAN NET IMPORT": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS"
+    },
+    "sk/elec/inter/bycountry/ua/averagebyyear/chart": {
+        "": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS"
+    },
+    "sk/elec/inter/bycountry/ua/minavmax/chart": {
+        "MIN": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS",
+        "AVERAGE": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS",
+        "MAX": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS"
+    },
+    "sk/elec/inter/bycountry/ua/peak/chart": {
+        "PEAK NET IMPORT": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS"
+    },
+    "sk/elec/inter/bycountry/ua/peakbyyear/chart": {
+        "": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS"
+    },
+    "sk/elec/inter/deltas/combined/chart": {
+        "DAY AHEAD NTC (to Slovakia)": "SK_NTC_BEST",
+        "DAY AHEAD NTC (from Slovakia)": "SK_NTC_BEST",
+        "Czech Intraday": "SK_INTERCONNECTOR_INTRADAY",
+        "Czech Schedule Delta": "SK_INTERCONNECTOR_SCHEDULE_ERROR",
+        "Hungary Intraday": "SK_INTERCONNECTOR_INTRADAY",
+        "Hungary Schedule Delta": "SK_INTERCONNECTOR_SCHEDULE_ERROR",
+        "Poland Intraday": "SK_INTERCONNECTOR_INTRADAY",
+        "Poland Schedule Delta": "SK_INTERCONNECTOR_SCHEDULE_ERROR",
+        "DA Scheduled Delta": "SK_INTERCONNECTOR_DASCHEDULE_ERROR",
+        "Last Schedule Delta": "SK_INTERCONNECTOR_SCHEDULE_ERROR",
+        "DA Scheduled Flow": "ENTSOE_DAY_AHEAD_SCHEDULED_COMMERCIAL_EXCHANGES",
+        "Last Scheduled Flow": "ENTSOE_SCHEDULED_COMMERCIAL_EXCHANGES",
+        "Physical Flow": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS"
+    },
+    "sk/elec/inter/explicit/atc/requested/pl/chart": {
+        "EXPLICIT ATC IMPORT": "entsoe_explicit_allocations_intraday_allocated_capacity",
+        "EXPLICIT REQUESTED IMPORT CAPACITY": "entsoe_explicit_allocations_intraday_requested_capacity",
+        "EXPLICIT ATC EXPORT": "entsoe_explicit_allocations_intraday_allocated_capacity",
+        "EXPLICIT REQUESTED EXPORT CAPACITY": "entsoe_explicit_allocations_intraday_requested_capacity",
+        "EXPLICIT IMPORT CAPACITY PRICE": "entsoe_explicit_allocations_intraday_capacity_price",
+        "EXPLICIT EXPORT CAPACITY PRICE": "entsoe_explicit_allocations_intraday_capacity_price"
+    },
+    "sk/elec/inter/h2h/countries/chart": {
+        "AT to SK (from Austria)": "EPEX_HUB_TO_HUB_HM01",
+        "SK to AT (to Austria)": "EPEX_HUB_TO_HUB_HM01",
+        "BE to SK (from Belgium)": "EPEX_HUB_TO_HUB_HM01",
+        "SK to BE (to Belgium)": "EPEX_HUB_TO_HUB_HM01",
+        "BG to SK (from Bulgaria)": "EPEX_HUB_TO_HUB_HM01",
+        "SK to BG (to Bulgaria)": "EPEX_HUB_TO_HUB_HM01",
+        "SK to HR (to Croatia)": "EPEX_HUB_TO_HUB_HM01",
+        "CZ to SK (from Czech Republic)": "EPEX_HUB_TO_HUB_HM01",
+        "SK to CZ (to Czech Republic)": "EPEX_HUB_TO_HUB_HM01",
+        "DK to SK (from Denmark)": "EPEX_HUB_TO_HUB_HM01",
+        "SK to DK (to Denmark)": "EPEX_HUB_TO_HUB_HM01",
+        "SK to EE (to Estonia)": "EPEX_HUB_TO_HUB_HM01",
+        "FI to SK (from Finland)": "EPEX_HUB_TO_HUB_HM01",
+        "SK to FI (to Finland)": "EPEX_HUB_TO_HUB_HM01",
+        "FR to SK (from France)": "EPEX_HUB_TO_HUB_HM01",
+        "SK to FR (to France)": "EPEX_HUB_TO_HUB_HM01",
+        "DE to SK (from Germany)": "EPEX_HUB_TO_HUB_HM01",
+        "SK to DE (to Germany)": "EPEX_HUB_TO_HUB_HM01",
+        "GR to SK (from Greece)": "EPEX_HUB_TO_HUB_HM01",
+        "SK to GR (to Greece)": "EPEX_HUB_TO_HUB_HM01",
+        "HU to SK (from Hungary)": "EPEX_HUB_TO_HUB_HM01",
+        "SK to HU (to Hungary)": "EPEX_HUB_TO_HUB_HM01",
+        "IT to SK (from Italy)": "EPEX_HUB_TO_HUB_HM01",
+        "SK to IT (to Italy)": "EPEX_HUB_TO_HUB_HM01",
+        "LT to SK (from Lithuania)": "EPEX_HUB_TO_HUB_HM01",
+        "SK to LT (to Lithuania)": "EPEX_HUB_TO_HUB_HM01",
+        "LV to SK (from Latvia)": "EPEX_HUB_TO_HUB_HM01",
+        "SK to LV (to Latvia)": "EPEX_HUB_TO_HUB_HM01",
+        "NL to SK (From Netherlands)": "EPEX_HUB_TO_HUB_HM01",
+        "SK to NL (to Netherlands)": "EPEX_HUB_TO_HUB_HM01",
+        "NO to SK (From Norway)": "EPEX_HUB_TO_HUB_HM01",
+        "SK to NO (to Norway)": "EPEX_HUB_TO_HUB_HM01",
+        "PL to SK (From Poland)": "EPEX_HUB_TO_HUB_HM01",
+        "SK to PL (to Poland)": "EPEX_HUB_TO_HUB_HM01",
+        "PT to SK (From Portugal)": "EPEX_HUB_TO_HUB_HM01",
+        "SK to PT (to Portugal)": "EPEX_HUB_TO_HUB_HM01",
+        "RO to SK (From Romania)": "EPEX_HUB_TO_HUB_HM01",
+        "SK to RO (to Romania)": "EPEX_HUB_TO_HUB_HM01",
+        "ES to SK (From Spain)": "EPEX_HUB_TO_HUB_HM01",
+        "SK to ES (to Spain)": "EPEX_HUB_TO_HUB_HM01",
+        "SI to SK (From Slovenia)": "EPEX_HUB_TO_HUB_HM01",
+        "SK to SI (to Slovenia)": "EPEX_HUB_TO_HUB_HM01",
+        "SE to SK (From Sweden)": "EPEX_HUB_TO_HUB_HM01",
+        "SK to SE (to Sweden)": "EPEX_HUB_TO_HUB_HM01"
+    },
+    "sk/elec/inter/h2h/cz/chart": {
+        "Import Hour-7": "EPEX_HUB_TO_HUB_HM07",
+        "Import Hour-6": "EPEX_HUB_TO_HUB_HM06",
+        "Import Hour-5": "EPEX_HUB_TO_HUB_HM05",
+        "Import Hour-4": "EPEX_HUB_TO_HUB_HM04",
+        "Import Hour-3": "EPEX_HUB_TO_HUB_HM03",
+        "Import Hour-2": "EPEX_HUB_TO_HUB_HM02",
+        "Import Hour-1": "EPEX_HUB_TO_HUB_HM01",
+        "Export Hour-8": "EPEX_HUB_TO_HUB_HM08",
+        "Export Hour-7": "EPEX_HUB_TO_HUB_HM07",
+        "Export Hour-6": "EPEX_HUB_TO_HUB_HM06",
+        "Export Hour-5": "EPEX_HUB_TO_HUB_HM05",
+        "Export Hour-4": "EPEX_HUB_TO_HUB_HM04",
+        "Export Hour-3": "EPEX_HUB_TO_HUB_HM03",
+        "Export Hour-2": "EPEX_HUB_TO_HUB_HM02",
+        "Export Hour-1": "EPEX_HUB_TO_HUB_HM01"
+    },
+    "sk/elec/inter/h2h/export/chart": {
+        "SK to AT (to Austria)": "EPEX_HUB_TO_HUB_HM01",
+        "SK to BE (to Belgium)": "EPEX_HUB_TO_HUB_HM01",
+        "SK to BG (to Bulgaria)": "EPEX_HUB_TO_HUB_HM01",
+        "SK to HR (to Croatia)": "EPEX_HUB_TO_HUB_HM01",
+        "SK to CZ (to Czech Republic)": "EPEX_HUB_TO_HUB_HM01",
+        "SK to DK1 (to Denmark)": "EPEX_HUB_TO_HUB_HM01",
+        "SK to DK2 (to Denmark)": "EPEX_HUB_TO_HUB_HM01",
+        "SK to EE (to Estonia)": "EPEX_HUB_TO_HUB_HM01",
+        "SK to FI (to Finland)": "EPEX_HUB_TO_HUB_HM01",
+        "SK to FR (to France)": "EPEX_HUB_TO_HUB_HM01",
+        "SK to DE_50 (to Germany)": "EPEX_HUB_TO_HUB_HM01",
+        "SK to DE_AMPRION (to Germany)": "EPEX_HUB_TO_HUB_HM01",
+        "SK to DE_ENBW (to Germany)": "EPEX_HUB_TO_HUB_HM01",
+        "SK to DE_TENNET (to Germany)": "EPEX_HUB_TO_HUB_HM01",
+        "SK to GR (to Greece)": "EPEX_HUB_TO_HUB_HM01",
+        "SK to HU (to Hungary)": "EPEX_HUB_TO_HUB_HM01",
+        "SK to IT_CALA (to Italy)": "EPEX_HUB_TO_HUB_HM01",
+        "SK to IT_CNOR (to Italy)": "EPEX_HUB_TO_HUB_HM01",
+        "SK to IT_CSUD (to Italy)": "EPEX_HUB_TO_HUB_HM01",
+        "SK to IT_MALT (to Italy)": "EPEX_HUB_TO_HUB_HM01",
+        "SK to IT_NORD (to Italy)": "EPEX_HUB_TO_HUB_HM01",
+        "SK to IT_SARD (to Italy)": "EPEX_HUB_TO_HUB_HM01",
+        "SK to IT_SICI (to Italy)": "EPEX_HUB_TO_HUB_HM01",
+        "SK to IT_SUD (to Italy)": "EPEX_HUB_TO_HUB_HM01",
+        "SK to IT_SVIZ (to Italy)": "EPEX_HUB_TO_HUB_HM01",
+        "SK to LT (to Lithuania)": "EPEX_HUB_TO_HUB_HM01",
+        "SK to LV (to Latvia)": "EPEX_HUB_TO_HUB_HM01",
+        "SK to NL (to Netherlands)": "EPEX_HUB_TO_HUB_HM01",
+        "SK to NO1 (to Norway)": "EPEX_HUB_TO_HUB_HM01",
+        "SK to NO2 (to Norway)": "EPEX_HUB_TO_HUB_HM01",
+        "SK to NO2A (to Norway)": "EPEX_HUB_TO_HUB_HM01",
+        "SK to NO3 (to Norway)": "EPEX_HUB_TO_HUB_HM01",
+        "SK to NO4 (to Norway)": "EPEX_HUB_TO_HUB_HM01",
+        "SK to NO5 (to Norway)": "EPEX_HUB_TO_HUB_HM01",
+        "SK to PL (to Poland)": "EPEX_HUB_TO_HUB_HM01",
+        "SK to PT (to Portugal)": "EPEX_HUB_TO_HUB_HM01",
+        "SK to RO (to Romania)": "EPEX_HUB_TO_HUB_HM01",
+        "SK to ES (to Spain)": "EPEX_HUB_TO_HUB_HM01",
+        "SK to SI (to Slovenia)": "EPEX_HUB_TO_HUB_HM01",
+        "SK to SE1 (to Sweden)": "EPEX_HUB_TO_HUB_HM01",
+        "SK to SE2 (to Sweden)": "EPEX_HUB_TO_HUB_HM01",
+        "SK to SE3 (to Sweden)": "EPEX_HUB_TO_HUB_HM01",
+        "SK to SE4 (to Sweden)": "EPEX_HUB_TO_HUB_HM01"
+    },
+    "sk/elec/inter/h2h/hu/chart": {
+        "Import Hour-7": "EPEX_HUB_TO_HUB_HM07",
+        "Import Hour-6": "EPEX_HUB_TO_HUB_HM06",
+        "Import Hour-5": "EPEX_HUB_TO_HUB_HM05",
+        "Import Hour-4": "EPEX_HUB_TO_HUB_HM04",
+        "Import Hour-3": "EPEX_HUB_TO_HUB_HM03",
+        "Import Hour-2": "EPEX_HUB_TO_HUB_HM02",
+        "Import Hour-1": "EPEX_HUB_TO_HUB_HM01",
+        "Export Hour-8": "EPEX_HUB_TO_HUB_HM08",
+        "Export Hour-7": "EPEX_HUB_TO_HUB_HM07",
+        "Export Hour-6": "EPEX_HUB_TO_HUB_HM06",
+        "Export Hour-5": "EPEX_HUB_TO_HUB_HM05",
+        "Export Hour-4": "EPEX_HUB_TO_HUB_HM04",
+        "Export Hour-3": "EPEX_HUB_TO_HUB_HM03",
+        "Export Hour-2": "EPEX_HUB_TO_HUB_HM02",
+        "Export Hour-1": "EPEX_HUB_TO_HUB_HM01"
+    },
+    "sk/elec/inter/h2h/import/chart": {
+        "AT to SK (from Austria)": "EPEX_HUB_TO_HUB_HM01",
+        "BE to SK (from Belgium)": "EPEX_HUB_TO_HUB_HM01",
+        "BG to SK (from Bulgaria)": "EPEX_HUB_TO_HUB_HM01",
+        "CZ to SK (from Czech Republic)": "EPEX_HUB_TO_HUB_HM01",
+        "DK1 to SK (from Denmark)": "EPEX_HUB_TO_HUB_HM01",
+        "DK2 to SK (from Denmark)": "EPEX_HUB_TO_HUB_HM01",
+        "FI to SK (from Finland)": "EPEX_HUB_TO_HUB_HM01",
+        "FR to SK (from France)": "EPEX_HUB_TO_HUB_HM01",
+        "DE_50 to SK (from Germany)": "EPEX_HUB_TO_HUB_HM01",
+        "DE_AMPRION to SK (from Germany)": "EPEX_HUB_TO_HUB_HM01",
+        "DE_ENBW to SK (from Germany)": "EPEX_HUB_TO_HUB_HM01",
+        "DE_TENNET to SK (from Germany)": "EPEX_HUB_TO_HUB_HM01",
+        "GR to SK (From Slovakia)": "EPEX_HUB_TO_HUB_HM01",
+        "HU to SK (from Hungary)": "EPEX_HUB_TO_HUB_HM01",
+        "IT_CALA to SK (from Italy)": "EPEX_HUB_TO_HUB_HM01",
+        "IT_CNOR to SK (from Italy)": "EPEX_HUB_TO_HUB_HM01",
+        "IT_NORD to SK (from Italy)": "EPEX_HUB_TO_HUB_HM01",
+        "IT_SARD to SK (from Italy)": "EPEX_HUB_TO_HUB_HM01",
+        "IT_SICI to SK (from Italy)": "EPEX_HUB_TO_HUB_HM01",
+        "IT_SUD to SK (from Italy)": "EPEX_HUB_TO_HUB_HM01",
+        "IT_SVIZ to SK (from Italy)": "EPEX_HUB_TO_HUB_HM01",
+        "LT to SK (From Lithuania)": "EPEX_HUB_TO_HUB_HM01",
+        "LV to SK (From Latvia)": "EPEX_HUB_TO_HUB_HM01",
+        "NL to SK (From Netherlands)": "EPEX_HUB_TO_HUB_HM01",
+        "NO1 to SK (From Norway)": "EPEX_HUB_TO_HUB_HM01",
+        "NO2 to SK (From Norway)": "EPEX_HUB_TO_HUB_HM01",
+        "NO2A to SK (From Norway)": "EPEX_HUB_TO_HUB_HM01",
+        "NO3 to SK (From Norway)": "EPEX_HUB_TO_HUB_HM01",
+        "NO4 to SK (From Norway)": "EPEX_HUB_TO_HUB_HM01",
+        "NO5 to SK (From Norway)": "EPEX_HUB_TO_HUB_HM01",
+        "PL to SK (From Poland)": "EPEX_HUB_TO_HUB_HM01",
+        "PT to SK (From Portugal)": "EPEX_HUB_TO_HUB_HM01",
+        "RO to SK (From Romania)": "EPEX_HUB_TO_HUB_HM01",
+        "ES to SK (From Spain)": "EPEX_HUB_TO_HUB_HM01",
+        "SI to SK (From Slovenia)": "EPEX_HUB_TO_HUB_HM01",
+        "SE1 to SK (From Sweden)": "EPEX_HUB_TO_HUB_HM01",
+        "SE2 to SK (From Sweden)": "EPEX_HUB_TO_HUB_HM01",
+        "SE3 to SK (From Sweden)": "EPEX_HUB_TO_HUB_HM01",
+        "SE4 to SK (From Sweden)": "EPEX_HUB_TO_HUB_HM01"
+    },
+    "sk/elec/inter/h2h/chart": {
+        "CZ to SK (from Czech Republic)": "EPEX_HUB_TO_HUB_HM01",
+        "SK to CZ (to Czech Republic)": "EPEX_HUB_TO_HUB_HM01",
+        "HU to SK (from Hungary)": "EPEX_HUB_TO_HUB_HM01",
+        "SK to HU (to Hungary)": "EPEX_HUB_TO_HUB_HM01",
+        "PL to SK (from Poland)": "EPEX_HUB_TO_HUB_HM01",
+        "SK to PL (to Poland)": "EPEX_HUB_TO_HUB_HM01"
+    },
+    "sk/elec/inter/h2h/pl/chart": {
+        "Import Hour-7": "EPEX_HUB_TO_HUB_HM07",
+        "Import Hour-6": "EPEX_HUB_TO_HUB_HM06",
+        "Import Hour-5": "EPEX_HUB_TO_HUB_HM05",
+        "Import Hour-4": "EPEX_HUB_TO_HUB_HM04",
+        "Import Hour-3": "EPEX_HUB_TO_HUB_HM03",
+        "Import Hour-2": "EPEX_HUB_TO_HUB_HM02",
+        "Import Hour-1": "EPEX_HUB_TO_HUB_HM01",
+        "Export Hour-8": "EPEX_HUB_TO_HUB_HM08",
+        "Export Hour-7": "EPEX_HUB_TO_HUB_HM07",
+        "Export Hour-6": "EPEX_HUB_TO_HUB_HM06",
+        "Export Hour-5": "EPEX_HUB_TO_HUB_HM05",
+        "Export Hour-4": "EPEX_HUB_TO_HUB_HM04",
+        "Export Hour-3": "EPEX_HUB_TO_HUB_HM03",
+        "Export Hour-2": "EPEX_HUB_TO_HUB_HM02",
+        "Export Hour-1": "EPEX_HUB_TO_HUB_HM01"
+    },
+    "sk/elec/inter/jao/history/cz/chart": {
+        "Monthly (Import)": "JAO_TOTAL_ALLOCATED_CAPACITY",
+        "Monthly 2 (Import)": "JAO_TOTAL_ALLOCATED_CAPACITY",
+        "Yearly (Import)": "JAO_TOTAL_ALLOCATED_CAPACITY",
+        "Monthly (Export)": "JAO_TOTAL_ALLOCATED_CAPACITY",
+        "Monthly 2 (Export)": "JAO_TOTAL_ALLOCATED_CAPACITY",
+        "Yearly (Export)": "JAO_TOTAL_ALLOCATED_CAPACITY",
+        "Price Monthly (Import)": "JAO_PRICE",
+        "Price Monthly 2 (Import)": "JAO_PRICE",
+        "Price Yearly (Import)": "JAO_PRICE",
+        "Price Monthly (Export)": "JAO_PRICE",
+        "Price Monthly 2 (Export)": "JAO_PRICE",
+        "Price Yearly (Export)": "JAO_PRICE"
+    },
+    "sk/elec/inter/jao/results/cz/monthly/02/chart": {
+        "REQUESTED CAPACITY (IMPORT)": "JAO_TOTAL_REQUESTED_CAPACITY",
+        "OFFERED CAPACITY (IMPORT)": "JAO_OFFERED_CAPACITY",
+        "ALLOCATED CAPACITY (IMPORT)": "JAO_TOTAL_ALLOCATED_CAPACITY",
+        "REQUESTED CAPACITY (EXPORT)": "JAO_TOTAL_REQUESTED_CAPACITY",
+        "OFFERED CAPACITY (EXPORT)": "JAO_OFFERED_CAPACITY",
+        "ALLOCATED CAPACITY (EXPORT)": "JAO_TOTAL_ALLOCATED_CAPACITY",
+        "NUMBER OF PARTICIPANTS (IMPORT)": "JAO_NUMBER_OF_PARTICIPANTS",
+        "AWARDED PARTICIPANTS (IMPORT)": "JAO_AWARDED_PARTICIPANTS",
+        "NUMBER OF PARTICIPANTS (EXPORT - negated)": "JAO_NUMBER_OF_PARTICIPANTS",
+        "AWARDED PARTICIPANTS (EXPORT - negated)": "JAO_AWARDED_PARTICIPANTS",
+        "PRICE (IMPORT)": "JAO_PRICE",
+        "PRICE (EXPORT)": "JAO_PRICE"
+    },
+    "sk/elec/inter/jao/results/cz/monthly/chart": {
+        "REQUESTED CAPACITY (IMPORT)": "JAO_TOTAL_REQUESTED_CAPACITY",
+        "OFFERED CAPACITY (IMPORT)": "JAO_OFFERED_CAPACITY",
+        "ALLOCATED CAPACITY (IMPORT)": "JAO_TOTAL_ALLOCATED_CAPACITY",
+        "REQUESTED CAPACITY (EXPORT)": "JAO_TOTAL_REQUESTED_CAPACITY",
+        "OFFERED CAPACITY (EXPORT)": "JAO_OFFERED_CAPACITY",
+        "ALLOCATED CAPACITY (EXPORT)": "JAO_TOTAL_ALLOCATED_CAPACITY",
+        "NUMBER OF PARTICIPANTS (IMPORT)": "JAO_NUMBER_OF_PARTICIPANTS",
+        "AWARDED PARTICIPANTS (IMPORT)": "JAO_AWARDED_PARTICIPANTS",
+        "NUMBER OF PARTICIPANTS (EXPORT - negated)": "JAO_NUMBER_OF_PARTICIPANTS",
+        "AWARDED PARTICIPANTS (EXPORT - negated)": "JAO_AWARDED_PARTICIPANTS",
+        "PRICE (IMPORT)": "JAO_PRICE",
+        "PRICE (EXPORT)": "JAO_PRICE"
+    },
+    "sk/elec/inter/net/chart": {
+        "DAY AHEAD NTC (from Slovakia)": "SK_NTC_BEST",
+        "DAY AHEAD NTC (to Slovakia)": "SK_NTC_BEST",
+        "NET IMPORTS": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS",
+        "LAST SCHEDULED FLOWS": "ENTSOE_SCHEDULED_COMMERCIAL_EXCHANGES",
+        "DA SCHEDULED FLOWS ": "entsoe_day_ahead_scheduled_commercial_exchanges"
+    },
+    "sk/elec/inter/ntc/intraday/cz/chart": {
+        "EXPLICIT ATC IMPORT": "entsoe_explicit_allocations_intraday_allocated_capacity",
+        "SCHEDULED CZECH NET IMPORT STACK (CZ)": "ENTSOE_SCHEDULED_COMMERCIAL_EXCHANGES",
+        "EXPLICIT ATC EXPORT": "entsoe_explicit_allocations_intraday_allocated_capacity",
+        "SCHEDULED CZECH NET EXPORT STACK (CZ)": "ENTSOE_SCHEDULED_COMMERCIAL_EXCHANGES",
+        "SCHEDULED CZECH NET (CZ)": "ENTSOE_SCHEDULED_COMMERCIAL_EXCHANGES",
+        "NET FLOWS": "entsoe_net_cross_border_physical_flows",
+        "BEST NTC (CZ to SK)": "SK_NTC_BEST",
+        "FBMC NTC (CZ to SK)": "JAO_FB_MAXEXCHANGE",
+        "DAY AHEAD NTC (CZ to SK)": "entsoe_interconnector_ntc_day_ahead",
+        "MONTH AHEAD NTC (CZ to SK)": "entsoe_interconnector_ntc_month_ahead",
+        "WEEK AHEAD NTC (CZ to SK)": "ENTSOE_INTERCONNECTOR_NTC_WEEK_AHEAD",
+        "DAY NTC (SK to CZ)": "SK_NTC_BEST",
+        "FBMC NTC (SK to CZ)": "JAO_FB_MAXEXCHANGE",
+        "DAY AHEAD NTC (SK to CZ)": "entsoe_interconnector_ntc_day_ahead",
+        "WEEK AHEAD NTC (SK to CZ)": "ENTSOE_INTERCONNECTOR_NTC_WEEK_AHEAD",
+        "MONTH AHEAD NTC (SK to CZ)": "entsoe_interconnector_ntc_month_ahead"
+    },
+    "sk/elec/inter/deltas/map/intraday/chart": {
+        "NO > SE": "SE_INTERCONNECTOR_INTRADAY",
+        "SE > FI": "FI_INTERCONNECTOR_INTRADAY",
+        "SE > LT": "LT_INTERCONNECTOR_INTRADAY",
+        "SE > DK": "DK_INTERCONNECTOR_INTRADAY",
+        "FI > EE": "EE_INTERCONNECTOR_INTRADAY",
+        "EE > LV": "LV_INTERCONNECTOR_INTRADAY",
+        "LV > LT": "LT_INTERCONNECTOR_INTRADAY",
+        "NO > DK": "DK_INTERCONNECTOR_INTRADAY",
+        "SE > PL": "PL_INTERCONNECTOR_INTRADAY",
+        "SE > DE": "DE_INTERCONNECTOR_INTRADAY",
+        "NO > DE": "DE_INTERCONNECTOR_INTRADAY",
+        "NO > NL": "NL_INTERCONNECTOR_INTRADAY",
+        "NO > GB": "GB_INTERCONNECTOR_INTRADAY",
+        "RU > LV": "LV_INTERCONNECTOR_INTRADAY",
+        "RU > LT": "LT_INTERCONNECTOR_INTRADAY",
+        "PL > LT": "LT_INTERCONNECTOR_INTRADAY",
+        "BY > LT": "LT_INTERCONNECTOR_INTRADAY",
+        "NL > GB": "GB_INTERCONNECTOR_INTRADAY",
+        "BE > GB": "GB_INTERCONNECTOR_INTRADAY",
+        "FR > GB": "GB_INTERCONNECTOR_INTRADAY",
+        "DK > NL": "NL_INTERCONNECTOR_INTRADAY",
+        "DE > NL": "NL_INTERCONNECTOR_INTRADAY",
+        "BE > NL": "NL_INTERCONNECTOR_INTRADAY",
+        "FR > BE": "BE_INTERCONNECTOR_INTRADAY",
+        "DE > BE": "BE_INTERCONNECTOR_INTRADAY",
+        "FR > DE": "DE_INTERCONNECTOR_INTRADAY",
+        "FR > CH": "CH_INTERCONNECTOR_INTRADAY",
+        "FR > IT": "IT_INTERCONNECTOR_INTRADAY",
+        "FR > ES": "ES_INTERCONNECTOR_INTRADAY",
+        "ES > PT": "PT_INTERCONNECTOR_INTRADAY",
+        "CH > IT": "IT_INTERCONNECTOR_INTRADAY",
+        "AT > IT": "IT_INTERCONNECTOR_INTRADAY",
+        "SI > IT": "IT_INTERCONNECTOR_INTRADAY",
+        "CH > DE": "DE_INTERCONNECTOR_INTRADAY",
+        "CH > AT": "AT_INTERCONNECTOR_INTRADAY",
+        "AT > DE": "DE_INTERCONNECTOR_INTRADAY",
+        "CZ > DE": "DE_INTERCONNECTOR_INTRADAY",
+        "PL > DE": "DE_INTERCONNECTOR_INTRADAY",
+        "DK > DE": "DE_INTERCONNECTOR_INTRADAY",
+        "SI > HR": "HR_INTERCONNECTOR_INTRADAY",
+        "AT > SI": "SI_INTERCONNECTOR_INTRADAY",
+        "HR > BA": "BA_INTERCONNECTOR_INTRADAY",
+        "HU > HR": "HR_INTERCONNECTOR_INTRADAY",
+        "AT > HU": "HU_INTERCONNECTOR_INTRADAY",
+        "CZ > AT": "AT_INTERCONNECTOR_INTRADAY",
+        "RS > HR": "HR_INTERCONNECTOR_INTRADAY",
+        "PL > CZ": "CZ_INTERCONNECTOR_INTRADAY",
+        "SK > CZ": "CZ_INTERCONNECTOR_INTRADAY",
+        "PL > SK": "SK_INTERCONNECTOR_INTRADAY",
+        "SK > HU": "HU_INTERCONNECTOR_INTRADAY",
+        "UA > HU": "HU_INTERCONNECTOR_INTRADAY",
+        "HU > RS": "RS_INTERCONNECTOR_INTRADAY",
+        "HU > RO": "RO_INTERCONNECTOR_INTRADAY",
+        "RS > RO": "RO_INTERCONNECTOR_INTRADAY",
+        "UA > RO": "RO_INTERCONNECTOR_INTRADAY",
+        "BG > RO": "RO_INTERCONNECTOR_INTRADAY",
+        "BG > RS": "RS_INTERCONNECTOR_INTRADAY",
+        "BG > MK": "MK_INTERCONNECTOR_INTRADAY",
+        "RS > BA": "BA_INTERCONNECTOR_INTRADAY",
+        "RS > ME": "ME_INTERCONNECTOR_INTRADAY",
+        "XK > MK": "MK_INTERCONNECTOR_INTRADAY",
+        "RS > MK": "MK_INTERCONNECTOR_INTRADAY",
+        "BA > ME": "ME_INTERCONNECTOR_INTRADAY",
+        "AL > ME": "ME_INTERCONNECTOR_INTRADAY",
+        "ME > IT": "IT_INTERCONNECTOR_INTRADAY",
+        "MK > GR": "GR_INTERCONNECTOR_INTRADAY",
+        "GR > IT": "IT_INTERCONNECTOR_INTRADAY",
+        "MT > IT": "IT_INTERCONNECTOR_INTRADAY",
+        "XK > AL": "AL_INTERCONNECTOR_INTRADAY",
+        "RS > AL": "AL_INTERCONNECTOR_INTRADAY"
+    },
+    "sk/elec/inter/scheduled/cz/chart": {
+        "BEST NTC (CZ TO SK)": "SK_NTC_BEST",
+        "FBMC NTC (CZ TO SK)": "JAO_FB_MAXEXCHANGE",
+        "WEEK AHEAD NTC (CZ TO SK)": "entsoe_interconnector_ntc_week_ahead",
+        "BEST NTC (SK TO CZ)": "SK_NTC_BEST",
+        "FBMC NTC (SK TO CZ)": "JAO_FB_MAXEXCHANGE",
+        "WEEK AHEAD NTC (SK TO CZ)": "entsoe_interconnector_ntc_week_ahead",
+        "PHYSICAL IMPORT": "entsoe_net_cross_border_physical_flows",
+        "PHYSICAL EXPORT": "entsoe_net_cross_border_physical_flows",
+        "PHYSICAL NET": "entsoe_net_cross_border_physical_flows",
+        "DA SCHEDULED IMPORT": "entsoe_day_ahead_scheduled_commercial_exchanges",
+        "DA SCHEDULED EXPORT": "entsoe_day_ahead_scheduled_commercial_exchanges",
+        "LAST SCHEDULED IMPORT": "entsoe_scheduled_commercial_exchanges",
+        "LAST SCHEDULED EXPORT": "entsoe_scheduled_commercial_exchanges",
+        "DA SCHEDULED NET": "ENTSOE_DAY_AHEAD_SCHEDULED_COMMERCIAL_EXCHANGES",
+        "LAST SCHEDULED NET": "entsoe_scheduled_commercial_exchanges",
+        "INTRADAY SCHEDULED FLOW": "SK_INTERCONNECTOR_INTRADAY",
+        "LAST SCHEDULE DELTA": "SK_INTERCONNECTOR_SCHEDULE_ERROR"
+    },
+    "sk/elec/pricing/currency/chart": {
+        "BAM TO EUR": "CURRENCY",
+        "BGN TO EUR": "CURRENCY",
+        "CHF TO EUR": "CURRENCY",
+        "CZK TO EUR": "CURRENCY",
+        "DKK TO EUR": "CURRENCY",
+        "EEK TO EUR": "CURRENCY",
+        "GBP TO EUR": "CURRENCY",
+        "HRK TO EUR": "CURRENCY",
+        "HUF TO EUR": "CURRENCY",
+        "LTL TO EUR": "CURRENCY",
+        "LVL TO EUR": "CURRENCY",
+        "MTL TO EUR": "CURRENCY",
+        "NOK TO EUR": "CURRENCY",
+        "PLN TO EUR": "CURRENCY",
+        "RON TO EUR": "CURRENCY",
+        "RUB TO EUR": "CURRENCY",
+        "SEK TO EUR": "CURRENCY",
+        "SIT TO EUR": "CURRENCY",
+        "SKK TO EUR": "CURRENCY",
+        "TRY TO EUR": "CURRENCY",
+        "USD TO EUR": "CURRENCY"
+    },
+    "sk/elec/pricing/daprices/average/chart": {
+        "AVERAGE DAY AHEAD PRICE": "ENTSOE_DAY_AHEAD_PRICES"
+    },
+    "sk/elec/pricing/daprices/averagebyyear/chart": {
+        "": "ENTSOE_DAY_AHEAD_PRICES"
+    },
+    "sk/elec/pricing/daprices/forecast/new/chart": {
+        "FINETUNED P10": "SK_DAP_FORECAST_RAW_FORECASTS",
+        "FINETUNED P90": "SK_DAP_FORECAST_RAW_FORECASTS",
+        "FINETUNED PRED": "SK_DAP_FORECAST_RAW_FORECASTS",
+        "OUTPUT P10": "SK_DAP_FORECAST_RAW_FORECASTS",
+        "OUTPUT P90": "SK_DAP_FORECAST_RAW_FORECASTS",
+        "OUTPUT PRED": "SK_DAP_FORECAST_RAW_FORECASTS",
+        "ACTUAL": "ENTSOE_DAY_AHEAD_PRICES"
+    },
+    "sk/elec/pricing/daprices/minavmax/chart": {
+        "MIN": "ENTSOE_DAY_AHEAD_PRICES",
+        "AVERAGE": "ENTSOE_DAY_AHEAD_PRICES",
+        "MAX": "ENTSOE_DAY_AHEAD_PRICES"
+    },
+    "sk/elec/pricing/daprices/chart": {
+        "CZECH REPUBLIC (CZ)": "ENTSOE_DAY_AHEAD_PRICES",
+        "HUNGARY (HU)": "HUPX_HR_AUCTION_RESULTS_HU",
+        "POLAND (PL)": "ENTSOE_DAY_AHEAD_PRICES",
+        "SLOVAKIA (SK)": "ENTSOE_DAY_AHEAD_PRICES"
+    },
+    "sk/elec/pricing/daprices/peak/chart": {
+        "PEAK DAY AHEAD PRICE": "ENTSOE_DAY_AHEAD_PRICES"
+    },
+    "sk/elec/pricing/daprices/peakbyyear/chart": {
+        "": "ENTSOE_DAY_AHEAD_PRICES"
+    },
+    "sk/elec/pricing/dayahead/byyear/chart": {
+        "": "ENTSOE_DAY_AHEAD_PRICES"
+    },
+    "sk/elec/pricing/map/dayahead/chart": {
+        "NO1 > NO2": "",
+        "NO1 > NO5": "",
+        "NO1 > NO3": "",
+        "NO2 > NO5": "",
+        "NO5 > NO3": "",
+        "NO3 > NO4": "",
+        "NO4 > FI": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS",
+        "NO4 > SE1": "",
+        "NO4 > SE2": "",
+        "SE1 > SE2": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS",
+        "SE1 > FI": "",
+        "SE2 > SE3": "",
+        "NO1 > SE3": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS",
+        "SE3 > SE4": "",
+        "SE3-FI": "",
+        "SE4 > LT": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS",
+        "SE4 > DK2": "",
+        "FI > EE": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS",
+        "EE > LV": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS",
+        "LV > LT": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS",
+        "DK2 > DK1": "",
+        "NO2 > DK1": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS",
+        "SE3 > DK1": "",
+        "SE4 > PL": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS",
+        "SE4 > DE": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS",
+        "NO2 > DE": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS",
+        "NO2-NL": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS",
+        "NO2 > GB": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS",
+        "RU > FI": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS",
+        "RU > EE": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS",
+        "RU > LV": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS",
+        "RU > LT": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS",
+        "PL > LT": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS",
+        "BY > LT": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS",
+        "NL > GB": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS",
+        "BE > GB": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS",
+        "FR > GB": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS",
+        "ISEM > GB": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS",
+        "DK > NL": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS",
+        "DE_TENNET > NL": "",
+        "DE_AMPRION > NL": "",
+        "BE > NL": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS",
+        "FR > BE": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS",
+        "DE > BE": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS",
+        "FR > DE_AMPRION": "",
+        "FR > DE_TRANSNETBW": "",
+        "FR > CH": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS",
+        "FR > IT": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS",
+        "FR > ES": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS",
+        "ES > PT": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS",
+        "CH > IT": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS",
+        "AT > IT": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS",
+        "SI > IT": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS",
+        "CH > DE_TRANSNETBW": "",
+        "CH > DE_AMPRION": "",
+        "CH > AT": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS",
+        "AT > DE": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS",
+        "CZ > DE": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS",
+        "PL > DE": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS",
+        "DK1 > DE": "",
+        "DK2 > DE": "",
+        "SI > HR": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS",
+        "AT > SI": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS",
+        "HR > BA": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS",
+        "HU > HR": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS",
+        "AT > HU": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS",
+        "CZ > AT": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS",
+        "RS > HR": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS",
+        "PL > CZ": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS",
+        "SK > CZ": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS",
+        "UA > PL": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS",
+        "PL > SK": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS",
+        "UA > SK": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS",
+        "SK > HU": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS",
+        "UA > HU": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS",
+        "HU > RS": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS",
+        "HU > RO": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS",
+        "RS > RO": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS",
+        "UA > RO": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS",
+        "BG > RO": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS",
+        "BG > RS": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS",
+        "TR > BG": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS",
+        "BG > GR": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS",
+        "BG > MK": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS",
+        "RS > BA": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS",
+        "RS > ME": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS",
+        "XK > MK": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS",
+        "RS > MK": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS",
+        "BA > ME": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS",
+        "AL > ME": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS",
+        "ME > IT": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS",
+        "GR > AL": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS",
+        "MK > GR": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS",
+        "GR > IT": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS",
+        "TR > GR": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS",
+        "IT1 > IT2": "",
+        "IT2 > IT3": "",
+        "IT3 > IT4": "",
+        "IT3 > IT5": "",
+        "MT > IT": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS",
+        "XK > AL": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS",
+        "RS > AL": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS",
+        "NO2 > NL": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS",
+        "SE2 > NO3": ""
+    },
+    "sk/elec/pricing/systemborders/chart": {
+        "CZECH REPUBLIC SURPLUS (CZ)": "ENTSOE_IMBALANCE_PRICES_POS",
+        "CZECH REPUBLIC SHORTAGE (CZ)": "ENTSOE_IMBALANCE_PRICES_NEG",
+        "HUNGARY SURPLUS (HU)": "ENTSOE_IMBALANCE_PRICES_POS",
+        "HUNGARY SHORTAGE (HU)": "ENTSOE_IMBALANCE_PRICES_NEG",
+        "POLAND SURPLUS (PL)": "ENTSOE_IMBALANCE_PRICES_POS",
+        "POLAND SHORTAGE (PL)": "ENTSOE_IMBALANCE_PRICES_NEG",
+        "SLOVAKIA SURPLUS (SK)": "ENTSOE_IMBALANCE_PRICES_POS",
+        "SLOVAKIA SHORTAGE (SK)": "ENTSOE_IMBALANCE_PRICES_NEG"
+    },
+    "sk/elec/eex/carbon/evolution/chart": {
+        "Settlement Price": "EEX_CONTRACT_EVO_EUA"
+    },
+    "sk/elec/eex/carbon/history/years/chart": {
+        "2016": "EEX_ROLLING_PRICES_CBN_EUA",
+        "2017": "EEX_ROLLING_PRICES_CBN_EUA",
+        "2018": "EEX_ROLLING_PRICES_CBN_EUA",
+        "2019": "EEX_ROLLING_PRICES_CBN_EUA",
+        "2020": "EEX_ROLLING_PRICES_CBN_EUA",
+        "2021": "EEX_ROLLING_PRICES_CBN_EUA",
+        "2022": "EEX_ROLLING_PRICES_CBN_EUA",
+        "2023": "EEX_ROLLING_PRICES_CBN_EUA",
+        "2024": "EEX_ROLLING_PRICES_CBN_EUA",
+        "2025": "EEX_ROLLING_PRICES_CBN_EUA",
+        "2026": "EEX_ROLLING_PRICES_CBN_EUA",
+        "2027": "EEX_ROLLING_PRICES_CBN_EUA",
+        "2028": "EEX_ROLLING_PRICES_CBN_EUA",
+        "2029": "EEX_ROLLING_PRICES_CBN_EUA",
+        "2030": "EEX_ROLLING_PRICES_CBN_EUA",
+        "2031": "EEX_ROLLING_PRICES_CBN_EUA"
+    },
+    "sk/elec/eex/carbon/contracts/chart": {},
+    "sk/elec/eex/carbon/chart": {
+        "Prevailing Price": "EEX_CLOSING_PRICE_EUA"
+    },
+    "sk/elec/eex/power/baseload/borders/chart": {
+        "Czech Republic": "EEX_CLOSING_PRICE_POWER_CZ_BASE",
+        "Hungary": "EEX_CLOSING_PRICE_POWER_HU_BASE",
+        "Poland": "EEX_CLOSING_PRICE_POWER_PL_BASE",
+        "Slovakia": "EEX_CLOSING_PRICE_POWER_SK_BASE"
+    },
+    "sk/elec/eex/power/evolution/baseload/chart": {
+        "Settlement Price": "EEX_CONTRACT_EVO_SK_BASE"
+    },
+    "sk/elec/eex/power/baseload/history/months/chart": {
+        "January": "EEX_ROLLING_PRICES_POW_SK_BASE",
+        "February": "EEX_ROLLING_PRICES_POW_SK_BASE",
+        "March": "EEX_ROLLING_PRICES_POW_SK_BASE",
+        "April": "EEX_ROLLING_PRICES_POW_SK_BASE",
+        "May": "EEX_ROLLING_PRICES_POW_SK_BASE",
+        "June": "EEX_ROLLING_PRICES_POW_SK_BASE",
+        "July": "EEX_ROLLING_PRICES_POW_SK_BASE",
+        "August": "EEX_ROLLING_PRICES_POW_SK_BASE",
+        "September": "EEX_ROLLING_PRICES_POW_SK_BASE",
+        "October": "EEX_ROLLING_PRICES_POW_SK_BASE",
+        "November": "EEX_ROLLING_PRICES_POW_SK_BASE",
+        "December": "EEX_ROLLING_PRICES_POW_SK_BASE"
+    },
+    "sk/elec/eex/power/contracts/baseload/chart": {},
+    "sk/elec/eex/power/baseload/flows/chart": {
+        "Czech Import": "EEX_INTERCONNECTOR_IND_FLOW_SK",
+        "Czech Export": "EEX_INTERCONNECTOR_IND_FLOW_SK",
+        "Poland Import": "EEX_INTERCONNECTOR_IND_FLOW_SK",
+        "Poland Export": "EEX_INTERCONNECTOR_IND_FLOW_SK"
+    },
+    "sk/elec/eex/power/baseload/flows/vsoutturn/chart": {
+        "Czech Import OUTTURN": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS",
+        "Czech Import": "EEX_INTERCONNECTOR_IND_FLOW_SK",
+        "Czech Export OUTTURN": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS",
+        "Czech Export": "EEX_INTERCONNECTOR_IND_FLOW_SK",
+        "Poland Import OUTTURN": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS",
+        "Poland Import": "EEX_INTERCONNECTOR_IND_FLOW_SK",
+        "Poland Export OUTTURN": "ENTSOE_NET_CROSS_BORDER_PHYSICAL_FLOWS",
+        "Poland Export": "EEX_INTERCONNECTOR_IND_FLOW_SK"
+    },
+    "sk/elec/eex/power/baseload/history/quarters/chart": {
+        "Q2 2019": "EEX_ROLLING_PRICES_POW_SK_BASE",
+        "Q3 2019": "EEX_ROLLING_PRICES_POW_SK_BASE",
+        "Q4 2019": "EEX_ROLLING_PRICES_POW_SK_BASE",
+        "Q1 2020": "EEX_ROLLING_PRICES_POW_SK_BASE",
+        "Q2 2020": "EEX_ROLLING_PRICES_POW_SK_BASE",
+        "Q3 2020": "EEX_ROLLING_PRICES_POW_SK_BASE",
+        "Q4 2020": "EEX_ROLLING_PRICES_POW_SK_BASE",
+        "Q1 2021": "EEX_ROLLING_PRICES_POW_SK_BASE",
+        "Q2 2021": "EEX_ROLLING_PRICES_POW_SK_BASE",
+        "Q3 2021": "EEX_ROLLING_PRICES_POW_SK_BASE",
+        "Q4 2021": "EEX_ROLLING_PRICES_POW_SK_BASE",
+        "Q1 2022": "EEX_ROLLING_PRICES_POW_SK_BASE",
+        "Q2 2022": "EEX_ROLLING_PRICES_POW_SK_BASE",
+        "Q3 2022": "EEX_ROLLING_PRICES_POW_SK_BASE",
+        "Q4 2022": "EEX_ROLLING_PRICES_POW_SK_BASE",
+        "Q1 2023": "EEX_ROLLING_PRICES_POW_SK_BASE",
+        "Q2 2023": "EEX_ROLLING_PRICES_POW_SK_BASE",
+        "Q3 2023": "EEX_ROLLING_PRICES_POW_SK_BASE",
+        "Q4 2023": "EEX_ROLLING_PRICES_POW_SK_BASE",
+        "Q1 2024": "EEX_ROLLING_PRICES_POW_SK_BASE"
+    },
+    "sk/elec/eex/power/baseload/history/years/chart": {
+        "2020": "EEX_ROLLING_PRICES_POW_SK_BASE",
+        "2021": "EEX_ROLLING_PRICES_POW_SK_BASE",
+        "2022": "EEX_ROLLING_PRICES_POW_SK_BASE",
+        "2023": "EEX_ROLLING_PRICES_POW_SK_BASE",
+        "2024": "EEX_ROLLING_PRICES_POW_SK_BASE",
+        "2025": "EEX_ROLLING_PRICES_POW_SK_BASE",
+        "2026": "EEX_ROLLING_PRICES_POW_SK_BASE"
+    },
+    "sk/elec/eex/power/baseload/map/chart": {
+        "Spain": "EEX_CLOSING_PRICE_POWER_ES_BASE",
+        "France": "EEX_CLOSING_PRICE_POWER_FR_BASE",
+        "Austria": "EEX_CLOSING_PRICE_POWER_AT_BASE",
+        "Belgium": "EEX_CLOSING_PRICE_POWER_BE_BASE",
+        "Bulgaria": "EEX_CLOSING_PRICE_POWER_BG_BASE",
+        "Czech Republic": "EEX_CLOSING_PRICE_POWER_CZ_BASE",
+        "Denmark": "EEX_CLOSING_PRICE_POWER_NO_BASE",
+        "Finland": "EEX_CLOSING_PRICE_POWER_NO_BASE",
+        "Germany": "EEX_CLOSING_PRICE_POWER_DEAT_BASE",
+        "Great Britain": "EEX_CLOSING_PRICE_POWER_GB_BASE",
+        "Greece": "EEX_CLOSING_PRICE_POWER_GR_BASE",
+        "Hungary": "EEX_CLOSING_PRICE_POWER_HU_BASE",
+        "Italy": "EEX_CLOSING_PRICE_POWER_IT_BASE",
+        "Netherlands": "EEX_CLOSING_PRICE_POWER_NL_BASE",
+        "Norway": "EEX_CLOSING_PRICE_POWER_NO_BASE",
+        "Poland": "EEX_CLOSING_PRICE_POWER_PL_BASE",
+        "Romania": "EEX_CLOSING_PRICE_POWER_RO_BASE",
+        "Serbia": "EEX_CLOSING_PRICE_POWER_RS_BASE",
+        "Slovakia": "EEX_CLOSING_PRICE_POWER_SK_BASE",
+        "Slovenia": "EEX_CLOSING_PRICE_POWER_SI_BASE",
+        "Sweden": "EEX_CLOSING_PRICE_POWER_NO_BASE",
+        "Switzerland": "EEX_CLOSING_PRICE_POWER_CH_BASE"
+    },
+    "sk/elec/eex/power/baseload/spreads/chart": {
+        "Czech Republic": "EEX_SPREADS_POWER_SK",
+        "Poland": "EEX_SPREADS_POWER_SK"
+    },
+    "sk/elec/eex/power/contracts/peak/chart": {},
+    "sk/elec/eex/power/evolution/peak/chart": {
+        "Settlement Price": "EEX_CONTRACT_EVO_SK_PEAK"
+    },
+    "sk/elec/eex/power/chart": {
+        "DAY AHEAD PRICE": "ENTSOE_DAY_AHEAD_PRICES",
+        "PEAK": "EEX_CLOSING_PRICE_POWER_SK_PEAK",
+        "BASELOAD": "EEX_CLOSING_PRICE_POWER_SK_BASE"
+    },
+    "sk/elec/eex/power/peak/history/months/chart": {
+        "January": "EEX_ROLLING_PRICES_POW_SK_PEAK",
+        "February": "EEX_ROLLING_PRICES_POW_SK_PEAK",
+        "March": "EEX_ROLLING_PRICES_POW_SK_PEAK",
+        "April": "EEX_ROLLING_PRICES_POW_SK_PEAK",
+        "May": "EEX_ROLLING_PRICES_POW_SK_PEAK",
+        "June": "EEX_ROLLING_PRICES_POW_SK_PEAK",
+        "July": "EEX_ROLLING_PRICES_POW_SK_PEAK",
+        "August": "EEX_ROLLING_PRICES_POW_SK_PEAK",
+        "September": "EEX_ROLLING_PRICES_POW_SK_PEAK",
+        "October": "EEX_ROLLING_PRICES_POW_SK_PEAK",
+        "November": "EEX_ROLLING_PRICES_POW_SK_PEAK",
+        "December": "EEX_ROLLING_PRICES_POW_SK_PEAK"
+    },
+    "sk/elec/eex/power/peak/history/quarters/chart": {
+        "Q2 2019": "EEX_ROLLING_PRICES_POW_SK_PEAK",
+        "Q3 2019": "EEX_ROLLING_PRICES_POW_SK_PEAK",
+        "Q4 2019": "EEX_ROLLING_PRICES_POW_SK_PEAK",
+        "Q1 2020": "EEX_ROLLING_PRICES_POW_SK_PEAK",
+        "Q2 2020": "EEX_ROLLING_PRICES_POW_SK_PEAK",
+        "Q3 2020": "EEX_ROLLING_PRICES_POW_SK_PEAK",
+        "Q4 2020": "EEX_ROLLING_PRICES_POW_SK_PEAK",
+        "Q1 2021": "EEX_ROLLING_PRICES_POW_SK_PEAK",
+        "Q2 2021": "EEX_ROLLING_PRICES_POW_SK_PEAK",
+        "Q3 2021": "EEX_ROLLING_PRICES_POW_SK_PEAK",
+        "Q4 2021": "EEX_ROLLING_PRICES_POW_SK_PEAK",
+        "Q1 2022": "EEX_ROLLING_PRICES_POW_SK_PEAK",
+        "Q2 2022": "EEX_ROLLING_PRICES_POW_SK_PEAK",
+        "Q3 2022": "EEX_ROLLING_PRICES_POW_SK_PEAK",
+        "Q4 2022": "EEX_ROLLING_PRICES_POW_SK_PEAK",
+        "Q1 2023": "EEX_ROLLING_PRICES_POW_SK_PEAK",
+        "Q2 2023": "EEX_ROLLING_PRICES_POW_SK_PEAK",
+        "Q3 2023": "EEX_ROLLING_PRICES_POW_SK_PEAK",
+        "Q4 2023": "EEX_ROLLING_PRICES_POW_SK_PEAK",
+        "Q1 2024": "EEX_ROLLING_PRICES_POW_SK_PEAK"
+    },
+    "sk/elec/eex/power/peak/history/years/chart": {
+        "2020": "EEX_ROLLING_PRICES_POW_SK_PEAK",
+        "2021": "EEX_ROLLING_PRICES_POW_SK_PEAK",
+        "2022": "EEX_ROLLING_PRICES_POW_SK_PEAK",
+        "2023": "EEX_ROLLING_PRICES_POW_SK_PEAK",
+        "2024": "EEX_ROLLING_PRICES_POW_SK_PEAK",
+        "2025": "EEX_ROLLING_PRICES_POW_SK_PEAK",
+        "2026": "EEX_ROLLING_PRICES_POW_SK_PEAK"
+    },
+    "sk/elec/spectron/carbon/evolution/chart": {
+        "Offer Price": "SPECTRON_CONTRACT_EVO_EUA_OFFER",
+        "Mid Price": "SPECTRON_CONTRACT_EVO_EUA_MID",
+        "Bid Price": "SPECTRON_CONTRACT_EVO_EUA_BID"
+    },
+    "sk/elec/spectron/carbon/contracts/chart": {},
+    "sk/elec/spectron/carbon/chart": {
+        "BID": "spectron_closing_prices_eua_bid",
+        "MID": "spectron_closing_prices_eua_mid",
+        "OFFER": "spectron_closing_prices_eua_offer"
+    },
+    "sk/elec/spectron/coal/api2/evolution/chart": {
+        "Offer Price": "SPECTRON_CONTRACT_EVO_COAL_API2_CIF_ARA_OFFER",
+        "Mid Price": "SPECTRON_CONTRACT_EVO_COAL_API2_CIF_ARA_MID",
+        "Bid Price": "SPECTRON_CONTRACT_EVO_COAL_API2_CIF_ARA_BID"
+    },
+    "sk/elec/spectron/coal/history/api2/months/chart": {
+        "January": "spectron_rolling_prices_api2",
+        "February": "spectron_rolling_prices_api2",
+        "March": "spectron_rolling_prices_api2",
+        "April": "spectron_rolling_prices_api2",
+        "May": "spectron_rolling_prices_api2",
+        "June": "spectron_rolling_prices_api2",
+        "July": "spectron_rolling_prices_api2",
+        "August": "spectron_rolling_prices_api2",
+        "September": "spectron_rolling_prices_api2",
+        "October": "spectron_rolling_prices_api2",
+        "November": "spectron_rolling_prices_api2",
+        "December": "spectron_rolling_prices_api2"
+    },
+    "sk/elec/spectron/coal/contracts/api2/chart": {},
+    "sk/elec/spectron/coal/api4/evolution/chart": {
+        "Offer Price": "SPECTRON_CONTRACT_EVO_COAL_API4_FOB_RBCT_OFFER",
+        "Mid Price": "SPECTRON_CONTRACT_EVO_COAL_API4_FOB_RBCT_MID",
+        "Bid Price": "SPECTRON_CONTRACT_EVO_COAL_API4_FOB_RBCT_BID"
+    },
+    "sk/elec/spectron/coal/api4/chart": {
+        "90-Day Rolling": "SPECTRON_COAL_API4_90D_ROLLING",
+        "30-Day Rolling": "SPECTRON_COAL_API4_30D_ROLLING",
+        "BID": "spectron_closing_prices_coal_api4_fob_rbct_bid",
+        "MID": "spectron_closing_prices_coal_api4_fob_rbct_mid",
+        "OFFER": "spectron_closing_prices_coal_api4_fob_rbct_offer"
+    },
+    "sk/elec/spectron/coal/contracts/api4/chart": {},
+    "sk/elec/spectron/coal/history/api2/quarters/chart": {
+        "Q1": "spectron_rolling_prices_api2",
+        "Q2": "spectron_rolling_prices_api2",
+        "Q3": "spectron_rolling_prices_api2",
+        "Q4": "spectron_rolling_prices_api2"
+    },
+    "sk/elec/spectron/coal/history/api2/years/chart": {
+        "2014": "spectron_rolling_prices_api2",
+        "2015": "spectron_rolling_prices_api2",
+        "2016": "spectron_rolling_prices_api2",
+        "2017": "spectron_rolling_prices_api2",
+        "2018": "spectron_rolling_prices_api2",
+        "2019": "spectron_rolling_prices_api2"
+    },
+    "sk/elec/spectron/coal/history/api4/months/chart": {
+        "January": "spectron_rolling_prices_api4",
+        "February": "spectron_rolling_prices_api4",
+        "March": "spectron_rolling_prices_api4",
+        "April": "spectron_rolling_prices_api4",
+        "May": "spectron_rolling_prices_api4",
+        "June": "spectron_rolling_prices_api4",
+        "July": "spectron_rolling_prices_api4",
+        "August": "spectron_rolling_prices_api4",
+        "September": "spectron_rolling_prices_api4",
+        "October": "spectron_rolling_prices_api4",
+        "November": "spectron_rolling_prices_api4",
+        "December": "spectron_rolling_prices_api4"
+    },
+    "sk/elec/spectron/coal/history/api4/quarters/chart": {
+        "Q1": "spectron_rolling_prices_api4",
+        "Q2": "spectron_rolling_prices_api4",
+        "Q3": "spectron_rolling_prices_api4",
+        "Q4": "spectron_rolling_prices_api4"
+    },
+    "sk/elec/spectron/coal/history/api4/years/chart": {
+        "2014": "spectron_rolling_prices_api4",
+        "2015": "spectron_rolling_prices_api4",
+        "2016": "spectron_rolling_prices_api4",
+        "2017": "spectron_rolling_prices_api4",
+        "2018": "spectron_rolling_prices_api4",
+        "2019": "spectron_rolling_prices_api4"
+    },
+    "sk/elec/spectron/coal/chart": {
+        "90-Day Rolling": "SPECTRON_COAL_API2_90D_ROLLING",
+        "30-Day Rolling": "SPECTRON_COAL_API2_30D_ROLLING",
+        "BID": "spectron_closing_prices_coal_api2_cif_ara_bid",
+        "MID": "spectron_closing_prices_coal_api2_cif_ara_mid",
+        "OFFER": "spectron_closing_prices_coal_api2_cif_ara_offer"
+    },
+    "sk/elec/spectron/coal/selection/chart": {
+        "API2": "spectron_closing_prices_coal_api2_cif_ara_mid",
+        "API4": "spectron_closing_prices_coal_api4_fob_rbct_mid"
+    },
+    "sk/elec/spectron/diesel/chart": {
+        "BID": "spectron_closing_prices_ice_gasoil_bid",
+        "MID": "spectron_closing_prices_ice_gasoil_mid",
+        "OFFER": "spectron_closing_prices_ice_gasoil_offer"
+    },
+    "sk/elec/spectron/oil/chart": {
+        "BID": "spectron_closing_prices_ice_brent_bid",
+        "MID": "spectron_closing_prices_ice_brent_mid",
+        "OFFER": "spectron_closing_prices_ice_brent_offer"
+    },
+    "sk/elec/renewables/aggregated/forecast/chart": {
+        "INFERRED INSTALLED CAPACITY (ENAPPSYS)": "SK_INFERRED_CAPACITY",
+        "SOLAR OUTTURN": "entsoe_aggregated_generation_per_type",
+        "ONSHORE WIND OUTTURN": "entsoe_aggregated_generation_per_type",
+        "SOLAR FORECAST": "SK_SOLAR_FORECAST",
+        "ONSHORE WIND FORECAST": "SK_WIND_FORECAST_RAW_FORECASTS"
+    },
+    "sk/elec/renewables/solar/forecast/dayahead/chart": {
+        "OUTTURN": "ENTSOE_AGGREGATED_GENERATION_PER_TYPE",
+        "Day Ahead Forecast": "SK_SOLAR_FORECAST",
+        "DEVIATION": "SK_SOLAR_ERROR"
+    },
+    "sk/elec/renewables/wind/onshore/forecast/dayahead/chart": {
+        "OUTTURN": "ENTSOE_AGGREGATED_GENERATION_PER_TYPE",
+        "Day Ahead Forecast": "SK_WIND_FORECAST_RAW_FORECASTS",
+        "DEVIATION": "SK_WIND_ERROR"
+    },
+    "sk/elec/renewables/combined/sensitivities/dayahead/chart": {
+        "Solar Upward Risk": "SK_FORECAST_SENSITIVITY_DELTA",
+        "Wind Upward Risk": "SK_FORECAST_SENSITIVITY_DELTA",
+        "Solar Downward Risk": "SK_FORECAST_SENSITIVITY_DELTA",
+        "Wind Downward Risk": "SK_FORECAST_SENSITIVITY_DELTA",
+        "Solar Outturn Deviation": "SK_SOLAR_ERROR",
+        "Wind Outturn Deviation": "SK_WIND_ERROR"
+    },
+    "sk/elec/renewables/solar/forecast/history/chart": {
+        "INFERRED INSTALLED CAPACITY (ENAPPSYS)": "SK_INFERRED_CAPACITY",
+        "SOLAR OUTTURN": "ENTSOE_AGGREGATED_GENERATION_PER_TYPE",
+        "6pm D-7": "SK_SOLAR_FORECAST",
+        "6pm D-6": "SK_SOLAR_FORECAST",
+        "6pm D-5": "SK_SOLAR_FORECAST",
+        "6pm D-4": "SK_SOLAR_FORECAST",
+        "6pm D-3": "SK_SOLAR_FORECAST",
+        "6pm D-2": "SK_SOLAR_FORECAST",
+        "6pm D-1": "SK_SOLAR_FORECAST",
+        "Minus 6 Hours": "SK_SOLAR_FORECAST",
+        "Minus 12 Hours": "SK_SOLAR_FORECAST",
+        "Minus 18 Hours": "SK_SOLAR_FORECAST",
+        "LATEST FORECAST (ENAPPSYS)": "SK_SOLAR_FORECAST",
+        "TREND-ADJUSTED FORECAST (ENAPPSYS)": "SK_SOLAR_FORECAST"
+    },
+    "sk/elec/renewables/solar/chart": {
+        "INFERRED INSTALLED CAPACITY (ENAPPSYS)": "SK_INFERRED_CAPACITY",
+        "SOLAR OUTTURN": "ENTSOE_AGGREGATED_GENERATION_PER_TYPE",
+        "FORECAST SENSITIVITY (ENAPPSYS) ": "SK_SOLAR_FORECAST",
+        "DA FORECAST (SEPS)": "ENTSOE_DAY_AHEAD_GENERATION_FORECAST_WIND_SOLAR",
+        "ID FORECAST (SEPS)": "ENTSOE_INTRADAY_GENERATION_FORECAST_WIND_SOLAR",
+        "FORECAST (SEPS)": "ENTSOE_BEST_GENERATION_FORECAST_SOLAR",
+        "DAY AHEAD FORECAST (ENAPPSYS)": "SK_SOLAR_FORECAST",
+        "FORECAST P10 (ENAPPSYS)": "SK_SOLAR_FORECAST",
+        "FORECAST P90 (ENAPPSYS)": "SK_SOLAR_FORECAST",
+        "SOLAR FORECAST TREND-ADJUSTED (ENAPPSYS) ": "SK_SOLAR_FORECAST",
+        "SOLAR FORECAST UNADJUSTED (ENAPPSYS)": "SK_SOLAR_FORECAST"
+    },
+    "sk/elec/renewables/solar/sensitivities/adjusted/chart": {
+        "Solar Upward Risk": "SK_FORECAST_SENSITIVITY_DELTA",
+        "Solar Downward Risk": "SK_FORECAST_SENSITIVITY_DELTA",
+        "Solar Outturn Deviation": "SK_SOLAR_ERROR"
+    },
+    "sk/elec/renewables/solar/sensitivities/dayahead/chart": {
+        "Solar Upward Risk": "SK_FORECAST_SENSITIVITY_DELTA",
+        "Solar Downward Risk": "SK_FORECAST_SENSITIVITY_DELTA",
+        "Solar Outturn Deviation": "SK_SOLAR_ERROR"
+    },
+    "sk/elec/renewables/solar/sensitivities/latest/chart": {
+        "Solar Upward Risk": "SK_FORECAST_SENSITIVITY_DELTA",
+        "Solar Downward Risk": "SK_FORECAST_SENSITIVITY_DELTA",
+        "Solar Outturn Deviation": "SK_SOLAR_ERROR"
+    },
+    "sk/elec/renewables/solar/seps/chart": {
+        "SOLAR OUTTURN": "ENTSOE_AGGREGATED_GENERATION_PER_TYPE",
+        "SOLAR FORECAST (SEPS)": "entsoe_current_generation_forecast_wind_solar",
+        "SOLAR ID FORECAST (SEPS)": "entsoe_intraday_generation_forecast_wind_solar",
+        "SOLAR DA FORECAST (SEPS)": "entsoe_day_ahead_generation_forecast_wind_solar"
+    },
+    "sk/elec/renewables/solar/seps_nomax/chart": {
+        "SOLAR OUTTURN": "ENTSOE_AGGREGATED_GENERATION_PER_TYPE",
+        "SOLAR FORECAST (SEPS)": "entsoe_current_generation_forecast_wind_solar",
+        "SOLAR ID FORECAST (SEPS)": "entsoe_intraday_generation_forecast_wind_solar",
+        "SOLAR DA FORECAST (SEPS)": "entsoe_day_ahead_generation_forecast_wind_solar"
+    },
+    "sk/elec/renewables/solar/test/chart": {
+        "INFERRED INSTALLED CAPACITY (ENAPPSYS) ": "SK_INFERRED_CAPACITY",
+        "SOLAR OUTTURN": "ENTSOE_AGGREGATED_GENERATION_PER_TYPE",
+        "FORECAST SENSITIVITY (ENAPPSYS) ": "SK_SOLAR_FORECAST",
+        "DA FORECAST": "ENTSOE_DAY_AHEAD_GENERATION_FORECAST_WIND_SOLAR",
+        "REN ID FORECAST ": "ENTSOE_INTRADAY_GENERATION_FORECAST_WIND_SOLAR",
+        "FORECAST": "ENTSOE_BEST_GENERATION_FORECAST_SOLAR",
+        "DAY AHEAD FORECAST (ENAPPSYS)": "SK_SOLAR_FORECAST",
+        "FORECAST P10 (ENAPPSYS)": "SK_SOLAR_FORECAST",
+        "FORECAST P90 (ENAPPSYS)": "SK_SOLAR_FORECAST",
+        "SOLAR FORECAST TREND-ADJUSTED (ENAPPSYS) ": "SK_SOLAR_FORECAST",
+        "SOLAR FORECAST UNADJUSTED (ENAPPSYS)": "SK_SOLAR_FORECAST"
+    },
+    "sk/elec/renewables/wind/onshore/forecast/history/chart": {
+        "INFERRED INSTALLED CAPACITY (ENAPPSYS)": "SK_INFERRED_CAPACITY",
+        "ONSHORE GENERATION": "ENTSOE_AGGREGATED_GENERATION_PER_TYPE",
+        "6pm D-14": "SK_WIND_FORECAST_RAW_FORECASTS",
+        "6pm D-10": "SK_WIND_FORECAST_RAW_FORECASTS",
+        "6pm D-7": "SK_WIND_FORECAST_RAW_FORECASTS",
+        "6pm D-6": "SK_WIND_FORECAST_RAW_FORECASTS",
+        "6pm D-5": "SK_WIND_FORECAST_RAW_FORECASTS",
+        "6pm D-4": "SK_WIND_FORECAST_RAW_FORECASTS",
+        "6pm D-3": "SK_WIND_FORECAST_RAW_FORECASTS",
+        "6pm D-2": "SK_WIND_FORECAST_RAW_FORECASTS",
+        "6pm D-1": "SK_WIND_FORECAST_RAW_FORECASTS",
+        "Minus 6 Hours": "SK_WIND_FORECAST_RAW_FORECASTS",
+        "Minus 12 Hours": "SK_WIND_FORECAST_RAW_FORECASTS",
+        "Minus 18 Hours": "SK_WIND_FORECAST_RAW_FORECASTS",
+        "LATEST FORECAST (EnAppSys)": "SK_WIND_FORECAST_RAW_FORECASTS",
+        "TEND-ADJUSTED FORECAST (EnAppSys)": "SK_WIND_FORECAST_RAW_FORECASTS"
+    },
+    "sk/elec/renewables/wind/onshore/chart": {
+        "INFERRED INSTALLED CAPACITY (ENAPPSYS)": "SK_INFERRED_CAPACITY",
+        "ONSHORE WIND OUTTURN": "ENTSOE_AGGREGATED_GENERATION_PER_TYPE",
+        "FORECAST SENSITIVITY (ENAPPSYS)": "SK_WIND_FORECAST_RAW_FORECASTS",
+        "DELTA LATEST - DAY AHEAD": "SK_WIND_FORECAST_RAW_FORECASTS",
+        "ONSHORE WIND DA FORECAST (TSO)": "ENTSOE_DAY_AHEAD_GENERATION_FORECAST_WIND_SOLAR",
+        "ONSHORE WIND ID FORECAST (TSO)": "ENTSOE_INTRADAY_GENERATION_FORECAST_WIND_SOLAR",
+        "ONSHORE WIND FORECAST (TSO)": "ENTSOE_BEST_GENERATION_FORECAST_ONSHORE_WIND",
+        "WIND FORECAST D-1 (ENAPPSYS)": "SK_WIND_FORECAST_RAW_FORECASTS",
+        "WIND FORECAST P10 (ENAPPSYS)": "SK_WIND_FORECAST_RAW_FORECASTS",
+        "WIND FORECAST P90 (ENAPPSYS)": "SK_WIND_FORECAST_RAW_FORECASTS",
+        "WIND FORECAST TREND-ADJUSTED (ENAPPSYS)": "SK_WIND_FORECAST_RAW_FORECASTS",
+        "WIND FORECAST UNADJUSTED (ENAPPSYS)": "SK_WIND_FORECAST_RAW_FORECASTS"
+    },
+    "sk/elec/renewables/wind/onshore/test/chart": {
+        "INFERRED INSTALLED CAPACITY (ENAPPSYS) ": "SK_INFERRED_CAPACITY",
+        "ONSHORE WIND GENERATION": "ENTSOE_AGGREGATED_GENERATION_PER_TYPE",
+        "FORECAST SENSITIVITY (ENAPPSYS)": "SK_WIND_FORECAST_RAW_FORECASTS",
+        "DELTA LATEST - DAY AHEAD ": "SK_WIND_FORECAST_RAW_FORECASTS",
+        "ONSHORE WIND DA FORECAST ": "ENTSOE_DAY_AHEAD_GENERATION_FORECAST_WIND_SOLAR",
+        "ONSHORE WIND ID FORECAST ": "ENTSOE_INTRADAY_GENERATION_FORECAST_WIND_SOLAR",
+        "ONSHORE WIND FORECAST ": "ENTSOE_BEST_GENERATION_FORECAST_ONSHORE_WIND",
+        "WIND FORECAST D-1 (ENAPPSYS)": "SK_WIND_FORECAST_RAW_FORECASTS",
+        "WIND FORECAST P10 (ENAPPSYS)": "SK_WIND_FORECAST_RAW_FORECASTS",
+        "WIND FORECAST P90 (ENAPPSYS)": "SK_WIND_FORECAST_RAW_FORECASTS",
+        "WIND FORECAST TREND-ADJUSTED (ENAPPSYS)": "SK_WIND_FORECAST_RAW_FORECASTS",
+        "WIND FORECAST UNADJUSTED (ENAPPSYS)": "SK_WIND_FORECAST_RAW_FORECASTS"
+    },
+    "sk/elec/renewables/capacity/chart": {
+        "SOLAR": "SK_INFERRED_CAPACITY",
+        "WIND ONSHORE": "SK_INFERRED_CAPACITY"
+    },
+    "sk/elec/renewables/error/solar/chart": {
+        "OUTTURN": "ENTSOE_AGGREGATED_GENERATION_PER_TYPE",
+        "ENTSOE FORECAST": "ENTSOE_BEST_GENERATION_FORECAST_SOLAR",
+        "ENAPPSYS ADJUSTED FORECAST": "SK_SOLAR_FORECAST",
+        "ENAPPSYS UNADJUSTED FORECAST": "SK_SOLAR_FORECAST",
+        "ENTSOE ERROR": "SK_SOLAR_ERROR",
+        "ENAPPSYS ADJUSTED ERROR": "SK_SOLAR_ERROR",
+        "ENAPPSYS UNADJUSTED ERROR": "SK_SOLAR_ERROR",
+        "ENTSOE DAY AHEAD ERROR": "SK_SOLAR_ERROR",
+        "ENAPPSYS DAY AHEAD ERROR": "SK_SOLAR_ERROR",
+        "ENTSOE PERCENTAGE": "SK_SOLAR_ERROR",
+        "ENAPPSYS DAY AHEAD PERCENTAGE": "SK_SOLAR_ERROR",
+        "ENAPPSYS ADJUSTED PERCENTAGE": "SK_SOLAR_ERROR",
+        "ENAPPSYS UNADJUSTED PERCENTAGE": "SK_SOLAR_ERROR"
+    },
+    "sk/elec/renewables/error/wind/onshore/chart": {
+        "OUTTURN": "ENTSOE_AGGREGATED_GENERATION_PER_TYPE",
+        "ENTSOE FORECAST": "ENTSOE_BEST_GENERATION_FORECAST_ONSHORE_WIND",
+        "ENAPPSYS ADJUSTED FORECAST": "SK_WIND_FORECAST_RAW_FORECASTS",
+        "ENAPPSYS UNADJUSTED FORECAST": "SK_WIND_FORECAST_RAW_FORECASTS",
+        "ENTSOE ERROR": "SK_WIND_ERROR",
+        "ENAPPSYS ADJUSTED ERROR": "SK_WIND_ERROR",
+        "ENAPPSYS UNADJUSTED ERROR": "SK_WIND_ERROR",
+        "ENTSOE DAY AHEAD ERROR": "SK_WIND_ERROR",
+        "ENAPPSYS DAY AHEAD ERROR": "SK_WIND_ERROR",
+        "ENTSOE PERCENTAGE": "SK_WIND_ERROR",
+        "ENAPPSYS DAY AHEAD PERCENTAGE": "SK_WIND_ERROR",
+        "ENAPPSYS ADJUSTED PERCENTAGE": "SK_WIND_ERROR",
+        "ENAPPSYS UNADJUSTED PERCENTAGE": "SK_WIND_ERROR"
+    },
+    "sk/elec/system/forecast/sensitivities/dayahead/chart": {
+        "Demand Upward Risk": "SK_FORECAST_SENSITIVITY_DELTA",
+        "Solar Upward Risk": "SK_FORECAST_SENSITIVITY_DELTA",
+        "Wind Upward Risk": "SK_FORECAST_SENSITIVITY_DELTA",
+        "Demand Downward Risk": "SK_FORECAST_SENSITIVITY_DELTA",
+        "Solar Downward Risk": "SK_FORECAST_SENSITIVITY_DELTA",
+        "Wind Downward Risk": "SK_FORECAST_SENSITIVITY_DELTA",
+        "OUTTURN Deviation": "SK_FORECAST_SENSITIVITY_DELTA"
+    },
+    "sk/elec/system/summary/chart": {
+        "DEMAND": "entsoe_actual_total_load",
+        "DEMAND FORECAST": "entsoe_day_ahead_total_load_forecast",
+        "BIOMASS": "ENTSOE_AGGREGATED_GENERATION_PER_TYPE",
+        "HYDRO (RESERVOIR)": "entsoe_aggregated_generation_per_type",
+        "HYDRO (RIVER)": "entsoe_aggregated_generation_per_type",
+        "SOLAR": "entsoe_aggregated_generation_per_type",
+        "NUCLEAR": "entsoe_aggregated_generation_per_type",
+        "SURPLUS IMBALANCE PRICE": "entsoe_imbalance_prices_pos",
+        "SHORTAGE IMBALANCE PRICE": "entsoe_imbalance_prices_neg",
+        "DAY AHEAD PRICE": "entsoe_day_ahead_prices"
+    },
+    "sk/gas/storage/stocks/total/chart": {
+        "CAPACITY": "AGSI_GAS_WORKING_VOLUME",
+        "GAS IN STORAGE": "AGSI_GAS_IN_STORAGE",
+        "STORAGE PROJECTION (MAX)": "GAS_STORAGE_PROJECTIONS_MAX_PROJECTION_ENAPPSYS",
+        "STORAGE PROJECTION (TREND)": "GAS_STORAGE_PROJECTIONS_TREND_PROJECTION_ENAPPSYS",
+        "STORAGE PROJECTION (MIN)": "GAS_STORAGE_PROJECTIONS_MIN_PROJECTION_ENAPPSYS",
+        "INJECTION CAPACITY": "AGSI_GAS_INJECTION_CAPACITY",
+        "INJECTION": "AGSI_GAS_INJECTION",
+        "WITHDRAWAL CAPACITY": "AGSI_GAS_WITHDRAWAL_CAPACITY",
+        "WITHDRAWAL": "AGSI_GAS_WITHDRAWAL"
+    },
+    "sk/gas/storage/filledpercent/changes/chart": {
+        "LAB": "AGSI_GAS_TREND",
+        "LAB 4": "AGSI_GAS_TREND",
+        "SLOVAKIAN TOTAL": "AGSI_GAS_TREND"
+    },
+    "sk/gas/storage/filledpercent/chart": {
+        "LAB": "AGSI_GAS_FULL",
+        "LAB 4": "AGSI_GAS_FULL",
+        "SLOVAKIAN TOTAL": "AGSI_GAS_FULL"
+    },
+    "sk/gas/storage/annualstocks/total/chart": {
+        "": "agsi_gas_in_storage"
+    }
+}

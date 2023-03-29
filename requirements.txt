@@ -2,3 +2,4 @@ enappsys-data-retrieval-v2 @ git+https://git.assembla.com/neta-reports.nl-ds-dat
 openpyxl
 streamlit
 plotly
+python-dotenv
