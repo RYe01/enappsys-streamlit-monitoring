@@ -1,10 +1,17 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
+import json
+import pickle
+import streamlit_authenticator as stauth
+
+from pathlib import Path
 
 import functions
+import data_grabber
 
-st.set_page_config(layout = "wide", page_icon = 'logo.png', page_title='EDA')
+
+st.set_page_config(layout = "wide", page_icon = 'favicon.ico', page_title='EnAppSys Monitoring')
 
 hide_streamlit_style = """
             <style>
@@ -14,9 +21,36 @@ hide_streamlit_style = """
             """
 st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
 
+# AUTHENTICATION
+names = ["Administrator"]
+usernames = ["admin"]
+
+file_path = Path(__file__).parent / "hashed_pw.pkl"
+with file_path.open("rb") as file:
+    hashed_passwords = pickle.load(file)
+
+authenticator = stauth.Authenticate(names, usernames, hashed_passwords, "EnAppSys Monitoring", "abcdef", cookie_expiry_days=30)
+
 st.header("EnAppSys Monitoring")
 
 functions.space()
+st.write('<p style="font-size:130%">Overview</p>', unsafe_allow_html=True)
+
+nl_index = data_grabber.country_codes().index('nl')
+
+country_code = st.selectbox('Select region:', data_grabber.country_codes(), key="country_code", index=nl_index)
+
+if country_code:
+    f = open(f'./chart_mappings_per_country/{country_code}-chart_mapping.json')
+    mapping = json.load(f)
+    
+    chart = st.selectbox('Select chart:', list(mapping.keys()), key="chart")
+    
+    st.write(mapping[chart])
+   
+
+
+
 st.write('<p style="font-size:130%">Import Dataset</p>', unsafe_allow_html=True)
 
 file_format = st.radio('Select file format:', ('csv', 'excel'), key='file_format')
