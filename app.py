@@ -21,16 +21,6 @@ hide_streamlit_style = """
             """
 st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
 
-# AUTHENTICATION
-names = ["Administrator"]
-usernames = ["admin"]
-
-file_path = Path(__file__).parent / "hashed_pw.pkl"
-with file_path.open("rb") as file:
-    hashed_passwords = pickle.load(file)
-
-authenticator = stauth.Authenticate(names, usernames, hashed_passwords, "EnAppSys Monitoring", "abcdef", cookie_expiry_days=30)
-
 st.header("EnAppSys Monitoring")
 
 functions.space()
@@ -47,8 +37,6 @@ if country_code:
     chart = st.selectbox('Select chart:', list(mapping.keys()), key="chart")
     
     st.write(mapping[chart])
-   
-
 
 
 st.write('<p style="font-size:130%">Import Dataset</p>', unsafe_allow_html=True)
@@ -71,8 +59,8 @@ if dataset:
 
 
     all_vizuals = ['Info', 'NA Info', 'Descriptive Analysis', 'Target Analysis', 
-                   'Distribution of Numerical Columns', 'Count Plots of Categorical Columns', 
-                   'Box Plots', 'Outlier Analysis', 'Variance of Target with Categorical Columns']
+                'Distribution of Numerical Columns', 'Count Plots of Categorical Columns', 
+                'Box Plots', 'Outlier Analysis', 'Variance of Target with Categorical Columns']
     functions.sidebar_space(3)         
     vizuals = st.sidebar.multiselect("Choose which visualizations you want to see", all_vizuals)
 
