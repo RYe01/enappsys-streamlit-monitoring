@@ -11,8 +11,32 @@ config = dotenv_values(".env")
 pass_code = config["PASS"]
 
 # Timezone and Resolution will be by default "CET" and "Quarter Hour", min&avg&max values won't be requested either
-def create_import_url(entity, passcode, datatype, start, end, timezone="CET", res="qh", minavmax=False):
-    return f'https://appqa.enappsys.com/csvapi?entities={entity}&minavmax={minavmax}&pass={passcode}&res={res}&timezone={timezone}&type={datatype}&user=andras.rozs&start={start}&end={end}'
+def create_import_url(entity, datatype, start, end, passcode=config["PASS"], timezone="CET", res="hourly", minavmax=False):
+    return f'https://appqa.enappsys.com/jsonapi?entities={entity}&minavmax={minavmax}&pass={passcode}&res={res}&timezone={timezone}&type={datatype}&user=andras.rozs&start={start}&end={end}'
+
+
+def get_entities_of(category, country_code, start, end):
+    f = open(f'./chart_mappings_per_country/{country_code}-chart_mapping.json')
+    mapping = json.load(f)
+    
+    charts = list(mapping.keys())
+    
+    if category == "demand":
+        charts = [chart for chart in charts if f'{country_code}/elec/demand' in chart]
+    elif category == "solar":
+        charts = [chart for chart in charts if f'{country_code}/elec/renewables/solar' in chart]
+    elif category == "wind":
+        charts = [chart for chart in charts if f'{country_code}/elec/renewables/wind' in chart]
+    # elif category == ""
+    
+    entities = {}
+    
+    for chart in charts:
+        for k, v in mapping[chart].items():
+            entities[k]= {"import": create_import_url(v['ENTITY'], v['DATATYPE'], start, end, res="qh"), "chart": chart}
+        
+    return entities 
+        
 
 def country_codes():
     return ['eu', 'al', 'at', 'ba', 'be', 'bg', 'ch', 'cz', 'de', 'dk', 'ee', 'es', 'fi', 'fr', 'gb', 'gr', 'hr', 'hu', 'isem', 'it', 'xk', 'lt', 'lv', 'me', 'mk', 'nl', 'no', 'pl', 'pt', 'ro', 'rs', 'se', 'si', 'sk']
@@ -41,15 +65,14 @@ def grab_mappings():
             for chart in root.findall('chart'):
                 chart_data = {}
                 for series in chart.findall('series'):
-                    chart_data[series.get('series_name')] = {"DATAYPE": series.get('data_type'), "ENTITY": series.get('entity')}
+                    chart_data[series.get('series_name')] = {"DATATYPE": series.get('data_type'), "ENTITY": series.get('entity')}
                 data[chart.get('path')] = chart_data
             
         with open(f"./chart_mappings_per_country/{country}-chart_mapping.json", "w") as outfile:
             json.dump(data, outfile)
 
 
-
-
 if __name__ == '__main__':
-    print('grabbing')
-    grab_mappings()     
+    # grab_mappings()
+    for k,v in get_entities_of('demand', 'de', '202303300000', '202303310000').items():
+        print(k, v)

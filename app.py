@@ -3,7 +3,6 @@ import pandas as pd
 import plotly.express as px
 import json
 import pickle
-import streamlit_authenticator as stauth
 
 from pathlib import Path
 
@@ -39,6 +38,9 @@ if country_code:
     st.write(mapping[chart])
 
 
+
+
+# ----- Dataset Specific ----- #
 st.write('<p style="font-size:130%">Import Dataset</p>', unsafe_allow_html=True)
 
 file_format = st.radio('Select file format:', ('csv', 'excel'), key='file_format')
