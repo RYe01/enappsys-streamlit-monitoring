@@ -74,5 +74,5 @@ def grab_mappings():
 
 if __name__ == '__main__':
     # grab_mappings()
-    for k,v in get_entities_of('demand', 'de', '202303300000', '202303310000').items():
+    for k,v in get_entities_of('solar', 'de', '202303300000', '202303310000').items():
         print(k, v)
