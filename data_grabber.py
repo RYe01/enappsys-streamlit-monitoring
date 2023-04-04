@@ -32,15 +32,25 @@ def get_entities_of(category, country_code, start, end):
     entities = {}
     
     for chart in charts:
+        x = 0
         for k, v in mapping[chart].items():
-            entities[k]= {"import": create_import_url(v['ENTITY'], v['DATATYPE'], start, end, res="qh"), "chart": chart}
+            print(k,v)
+            if k:
+                entities[f'{k} - {chart}'] = {"import": create_import_url(v['ENTITY'], v['DATATYPE'], start, end, res="qh"), "chart": chart}
+            else:
+                x+=1
+                entities[f'N/A no.{x} - {chart}'] = {"import": create_import_url(v['ENTITY'], v['DATATYPE'], start, end, res="qh"), "chart": chart}
+                print(entities[f'N/A no.{x} - {chart}'])
+    
+    print(entities)
     
     categories = {}
     for k, v in entities.items():
         if v['chart'] not in categories:
-            categories[v['chart']] = [v['import']]
+            categories[v['chart']] = {}
+            categories[v['chart']][k] = v['import']
         else:
-            categories[v['chart']].append(v['import'])
+            categories[v['chart']][k] = v['import']
         
     return categories 
         
@@ -81,5 +91,6 @@ def grab_mappings():
 
 if __name__ == '__main__':
     # grab_mappings()
-    for k,v in get_entities_of('solar', 'de', '202303300000', '202303310000').items():
-        print(k, v)
+    # for k,v in get_entities_of('demand', 'nl', '202303300000', '202303310000').items():
+    #     print(k, v)
+    get_entities_of('demand', 'nl', '202303300000', '202303310000')
