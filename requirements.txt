@@ -2,5 +2,6 @@ enappsys-data-retrieval-v2 @ git+https://git.assembla.com/neta-reports.nl-ds-dat
 openpyxl
 streamlit
 streamlit-authenticator
+streamlit-toggle-switch
 plotly
 python-dotenv

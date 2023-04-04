@@ -34,8 +34,15 @@ def get_entities_of(category, country_code, start, end):
     for chart in charts:
         for k, v in mapping[chart].items():
             entities[k]= {"import": create_import_url(v['ENTITY'], v['DATATYPE'], start, end, res="qh"), "chart": chart}
+    
+    categories = {}
+    for k, v in entities.items():
+        if v['chart'] not in categories:
+            categories[v['chart']] = [v['import']]
+        else:
+            categories[v['chart']].append(v['import'])
         
-    return entities 
+    return categories 
         
 
 def country_codes():
