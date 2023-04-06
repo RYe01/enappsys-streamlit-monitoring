@@ -5,6 +5,7 @@ import os
 
 from dotenv import dotenv_values
 from urllib.request import urlopen
+from datetime import datetime
 
 # .env file holds the pass key for imports
 config = dotenv_values(".env")
@@ -14,6 +15,11 @@ pass_code = config["PASS"]
 def create_import_url(entity, datatype, start, end, passcode=config["PASS"], timezone="CET", res="hourly", minavmax=False):
     return f'https://appqa.enappsys.com/jsonapi?entities={entity}&minavmax={minavmax}&pass={passcode}&res={res}&timezone={timezone}&type={datatype}&user=andras.rozs&start={start}&end={end}'
 
+# Convert DateTime to numbers for link
+def convert_date(date_to_convert):
+    dt_object = datetime.strptime(date_to_convert, "%Y-%m-%dT%H:%M:%S")
+    converted = dt_object.strftime("%Y%m%d%H%M%S")
+    return converted
 
 def get_entities_of(category, country_code, start, end):
     f = open(f'./chart_mappings_per_country/{country_code}-chart_mapping.json')
@@ -34,15 +40,11 @@ def get_entities_of(category, country_code, start, end):
     for chart in charts:
         x = 0
         for k, v in mapping[chart].items():
-            print(k,v)
             if k:
                 entities[f'{k} - {chart}'] = {"import": create_import_url(v['ENTITY'], v['DATATYPE'], start, end, res="qh"), "chart": chart}
             else:
                 x+=1
                 entities[f'N/A no.{x} - {chart}'] = {"import": create_import_url(v['ENTITY'], v['DATATYPE'], start, end, res="qh"), "chart": chart}
-                print(entities[f'N/A no.{x} - {chart}'])
-    
-    print(entities)
     
     categories = {}
     for k, v in entities.items():

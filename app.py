@@ -3,8 +3,6 @@ import pandas as pd
 import plotly.express as px
 import streamlit_toggle as tog
 import json
-import webbrowser
-import pickle
 
 from pathlib import Path
 
@@ -65,9 +63,7 @@ if (toggle_charts):
         mapping = json.load(f)
         
         category = st.selectbox('Select category:', ['demand', 'solar', 'wind'], key="category")
-        
-        # for val in data_grabber.get_entities_of(category, country_code_charts, '202303300000', '202303310000').values():
-        # webbrowser.open(f"https://appqa.enappsys.com/#{val['chart']}", new=1, autoraise=True)
+
         st.write(data_grabber.get_entities_of(category, country_code_charts, '202303300000', '202303310000'))
 
 
