@@ -5,3 +5,4 @@ streamlit-authenticator
 streamlit-toggle-switch
 plotly
 python-dotenv
+stqdm

@@ -1,11 +1,14 @@
 import pandas as pd
+import streamlit as st
 import xml.etree.ElementTree as ET
 import json
 import os
+import time
 
 from dotenv import dotenv_values
 from urllib.request import urlopen
 from datetime import datetime
+from stqdm import stqdm
 
 # .env file holds the pass key for imports
 config = dotenv_values(".env")
@@ -67,12 +70,15 @@ def grab_mappings():
         
     x = 0
     cc = country_codes()
+    
 
-    for country in cc:
+    for _ in stqdm(range(len(cc))):
         x+=1
-        print(f'The chart mapping of {x}/{len(cc)} country has been created.')
+        time.sleep(0.5)
+                
+        
         # grab chart mappings
-        with urlopen(f'https://appqa.enappsys.com/chartdatatypeinfo?country={country}&pass={pass_code}&user=andras.rozs&format=xml') as f:
+        with urlopen(f'https://appqa.enappsys.com/chartdatatypeinfo?country={cc[_]}&pass={pass_code}&user=andras.rozs&format=xml') as f:
             # parse XML file
             tree = ET.parse(f)
 
@@ -87,7 +93,7 @@ def grab_mappings():
                     chart_data[series.get('series_name')] = {"DATATYPE": series.get('data_type'), "ENTITY": series.get('entity')}
                 data[chart.get('path')] = chart_data
             
-        with open(f"./chart_mappings_per_country/{country}-chart_mapping.json", "w") as outfile:
+        with open(f"./chart_mappings_per_country/{cc[_]}-chart_mapping.json", "w") as outfile:
             json.dump(data, outfile)
 
 

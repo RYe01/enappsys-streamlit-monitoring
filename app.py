@@ -5,6 +5,7 @@ import streamlit_toggle as tog
 import json
 
 from pathlib import Path
+from datetime import datetime, timedelta
 
 import functions
 import data_grabber
@@ -21,6 +22,10 @@ hide_streamlit_style = """
 st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
 
 st.header("EnAppSys Monitoring")
+
+if st.button('Refresh Chart Mappings'):
+    data_grabber.grab_mappings()
+    
 
 functions.space()
 toggle_entities = tog.st_toggle_switch(label="Entities of a Chart", 
@@ -63,8 +68,11 @@ if (toggle_charts):
         mapping = json.load(f)
         
         category = st.selectbox('Select category:', ['demand', 'solar', 'wind'], key="category")
+        
+        end_check = datetime.now() + timedelta(days=0.1)
+        start_check = end_check - timedelta(days=1)
 
-        st.write(data_grabber.get_entities_of(category, country_code_charts, '202303300000', '202303310000'))
+        st.write(data_grabber.get_entities_of(category, country_code_charts, int(start_check.strftime("%Y%m%d%H%M%S")), int(end_check.strftime("%Y%m%d%H%M%S"))))
 
 
 # ----- Dataset Specific ----- #
