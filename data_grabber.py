@@ -101,21 +101,18 @@ def grab_mappings():
             json.dump(data, outfile)
 
 def complete(url):
+    data = json.loads(urlopen(url).read())
+    data = data['data']
     
-    if urlopen(url).getcode() == 200:
-        data = json.loads(urlopen(url).read())
-        data = data['data']
-        
-        df = pd.json_normalize(data)
-        print(df)
-        return df
-    return 0
+    df = pd.json_normalize(data)
+    print(df)
+    return df
 
 @st.cache_data
 def completeness_table():
-    tbl = pd.DataFrame(columns= ['nl', 'de', 'be', 'gb', 'fr', 'es']) #country_codes()) 
+    tbl = pd.DataFrame(columns=country_codes()) 
     
-    for cc in ['nl', 'de', 'be', 'gb', 'fr', 'es']: #country_codes():
+    for cc in country_codes():
         tbl[cc] = ["", "", ""]
         
     tbl.index = check_cat()
