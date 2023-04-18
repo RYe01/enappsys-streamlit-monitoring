@@ -110,12 +110,13 @@ def complete(url):
         print(df)
         return df
     return 0
-    
+
+@st.cache_data
 def completeness_table():
-    tbl = pd.DataFrame(columns= ['nl']) #country_codes()) 
+    tbl = pd.DataFrame(columns= ['nl', 'de', 'be', 'gb', 'fr', 'es']) #country_codes()) 
     
-    # for cc in country_codes():
-    tbl['nl'] = ["", "", ""]
+    for cc in ['nl', 'de', 'be', 'gb', 'fr', 'es']: #country_codes():
+        tbl[cc] = ["", "", ""]
         
     tbl.index = check_cat()
     
@@ -127,7 +128,10 @@ def completeness_table():
     
     for cat in tbl.index:
         for cc in tbl.columns:
+            
             link_list = []
+            is_error = False
+            
             en_list = get_entities_of(cat, cc, int(start_check.strftime("%Y%m%d%H%M%S")), int(end_check.strftime("%Y%m%d%H%M%S")))
             for key in en_list.keys():
                 for val in en_list[key].values():
@@ -150,12 +154,16 @@ def completeness_table():
                                 for index in list_of_indexes:
                                     list_of_times.append(df.iloc[index]['dateTimeUTC'])
                                     
-                                country_errors[cc][link] = list_of_times     
+                                country_errors[cc][link] = list_of_times
+                                is_error = True     
                         else:
-                            country_errors[cc][link] = "This Entity is completely empty!"
+                            country_errors[cc][link] = "Not streaming anymore!"
             
             if country_errors[cc]:
-                tbl.at[cat, cc] = 'ERROR'
+                if is_error:
+                    tbl.at[cat, cc] = 'ERROR'
+                else:
+                    tbl.at[cat, cc] = 'NOT STREAMING'
             else:
                 tbl.at[cat, cc] = 'OK'
             
