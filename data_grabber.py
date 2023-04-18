@@ -4,10 +4,11 @@ import xml.etree.ElementTree as ET
 import json
 import os
 import time
+import numpy as np
 
 from dotenv import dotenv_values
 from urllib.request import urlopen
-from datetime import datetime
+from datetime import datetime, timedelta
 from stqdm import stqdm
 
 # .env file holds the pass key for imports
@@ -63,6 +64,9 @@ def get_entities_of(category, country_code, start, end):
 def country_codes():
     return ['eu', 'al', 'at', 'ba', 'be', 'bg', 'ch', 'cz', 'de', 'dk', 'ee', 'es', 'fi', 'fr', 'gb', 'gr', 'hr', 'hu', 'isem', 'it', 'xk', 'lt', 'lv', 'me', 'mk', 'nl', 'no', 'pl', 'pt', 'ro', 'rs', 'se', 'si', 'sk']
 
+def check_cat():
+    return ['demand', 'solar', 'wind']
+
 def grab_mappings():
     # creating folder for chartmapping json files
     if (not os.path.exists("chart_mappings_per_country")):
@@ -96,9 +100,71 @@ def grab_mappings():
         with open(f"./chart_mappings_per_country/{cc[_]}-chart_mapping.json", "w") as outfile:
             json.dump(data, outfile)
 
+def complete(url):
+    
+    if urlopen(url).getcode() == 200:
+        data = json.loads(urlopen(url).read())
+        data = data['data']
+        
+        df = pd.json_normalize(data)
+        print(df)
+        return df
+    return 0
+    
+def completeness_table():
+    tbl = pd.DataFrame(columns= ['nl']) #country_codes()) 
+    
+    # for cc in country_codes():
+    tbl['nl'] = ["", "", ""]
+        
+    tbl.index = check_cat()
+    
+    end_check = datetime.now() + timedelta(days=0.1)
+    start_check = end_check - timedelta(days=1)
+    start_check = start_check.replace(minute=0, second=0)
+    
+    country_errors = {}
+    
+    for cat in tbl.index:
+        for cc in tbl.columns:
+            link_list = []
+            en_list = get_entities_of(cat, cc, int(start_check.strftime("%Y%m%d%H%M%S")), int(end_check.strftime("%Y%m%d%H%M%S")))
+            for key in en_list.keys():
+                for val in en_list[key].values():
+                    link_list.append(val)
+                    
+            if cc not in country_errors:
+                country_errors[cc] = {}
+            
+            link_list = list(set(link_list))
+            for link in link_list:
+                li = ['forecast', 'day_ahead', 'da_price']
+                for e in li:
+                    if e in link.lower():
+                        df = complete(link)
+                        print(df)
+                        if 'value' in df.columns:
+                            if(df.isnull().values.any()):
+                                list_of_indexes = pd.isnull(df).any('value').nonzero()[0]
+                                list_of_times = []
+                                for index in list_of_indexes:
+                                    list_of_times.append(df.iloc[index]['dateTimeUTC'])
+                                    
+                                country_errors[cc][link] = list_of_times     
+                        else:
+                            country_errors[cc][link] = "This Entity is completely empty!"
+            
+            if country_errors[cc]:
+                tbl.at[cat, cc] = 'ERROR'
+            else:
+                tbl.at[cat, cc] = 'OK'
+            
+    
+    return {'tbl': tbl, 'ce': country_errors}
+
 
 if __name__ == '__main__':
     # grab_mappings()
     # for k,v in get_entities_of('demand', 'nl', '202303300000', '202303310000').items():
     #     print(k, v)
-    get_entities_of('demand', 'nl', '202303300000', '202303310000')
+    complete("https://appqa.enappsys.com/jsonapi?entities=SL.SLOVENIA&minavmax=False&pass=194176176237229242180181180181163&res=qh&timezone=CET&type=entsoe_actual_total_load&user=andras.rozs&start=20230416142939&end=20230417142939")

@@ -74,6 +74,14 @@ if (toggle_charts):
 
         st.write(data_grabber.get_entities_of(category, country_code_charts, int(start_check.strftime("%Y%m%d%H%M%S")), int(end_check.strftime("%Y%m%d%H%M%S"))))
 
+functions.space()
+st.subheader("Completeness")
+
+tbl = data_grabber.completeness_table()
+
+st.dataframe(tbl['tbl'].style.applymap(lambda x: "background-color: green; color: white;" if x == "OK" else "background-color: red; color: white;"))
+st.write(tbl['ce'])
+
 
 # ----- Dataset Specific ----- #
 # functions.space()
