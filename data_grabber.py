@@ -123,8 +123,12 @@ def completeness_table():
     
     country_errors = {}
     
+    count = 0
+    
     for cat in tbl.index:
         for cc in tbl.columns:
+            count+=1
+            print(f'{count}/{len(tbl.columns)*3}')
             
             link_list = []
             is_error = False
@@ -139,25 +143,42 @@ def completeness_table():
             
             link_list = list(set(link_list))
             for link in link_list:
-                li = ['forecast', 'day_ahead', 'da_price']
-                for e in li:
-                    if e in link.lower():
-                        try:
-                            df = complete(link)
-                        except:
-                            continue
-                        print(df)
-                        if 'value' in df.columns:
-                            if(df.isnull().values.any()):
-                                list_of_indexes = pd.isnull(df).any('value').nonzero()[0]
-                                list_of_times = []
-                                for index in list_of_indexes:
-                                    list_of_times.append(df.iloc[index]['dateTimeUTC'])
-                                    
-                                country_errors[cc][link] = list_of_times
-                                is_error = True     
-                        else:
-                            country_errors[cc][link] = "Not streaming anymore!"
+                if 'forecast' or 'day_ahead' or 'da_price' in link.lower():
+                    try:
+                        df = complete(link)
+                    except:
+                        continue
+                    print(df)
+                    if 'value' in df.columns:
+                        if(df.isnull().values.any()):
+                            list_of_indexes = pd.isnull(df).any('value').nonzero()[0]
+                            list_of_times = []
+                            for index in list_of_indexes:
+                                list_of_times.append(df.iloc[index]['dateTimeUTC'])
+                                
+                            country_errors[cc][link] = list_of_times
+                            is_error = True     
+                    else:
+                        country_errors[cc][link] = "Not streaming anymore!"
+                else:
+                    try:
+                        df = complete(link)
+                        end = datetime.now() - timedelta(hours=2)
+                        df = df[df['dateTime'] < end]
+                    except:
+                        continue
+                    print(df)
+                    if 'value' in df.columns:
+                        if(df.isnull().values.any()):
+                            list_of_indexes = pd.isnull(df).any('value').nonzero()[0]
+                            list_of_times = []
+                            for index in list_of_indexes:
+                                list_of_times.append(df.iloc[index]['dateTimeUTC'])
+                                
+                            country_errors[cc][link] = list_of_times
+                            is_error = True     
+                    else:
+                        country_errors[cc][link] = "Not streaming anymore!"
             
             if country_errors[cc]:
                 if is_error:
