@@ -145,7 +145,10 @@ def completeness_table():
                 li = ['forecast', 'day_ahead', 'da_price']
                 for e in li:
                     if e in link.lower():
-                        df = complete(link)
+                        try:
+                            df = complete(link)
+                        except:
+                            continue
                         print(df)
                         if 'value' in df.columns:
                             if(df.isnull().values.any()):
