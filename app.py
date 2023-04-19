@@ -75,18 +75,12 @@ if (toggle_charts):
         st.write(data_grabber.get_entities_of(category, country_code_charts, int(start_check.strftime("%Y%m%d%H%M%S")), int(end_check.strftime("%Y%m%d%H%M%S"))))
 
 functions.space()
-toggle_cpl = tog.st_toggle_switch(label="Check for Completeness", 
-                    key="toggle_cpl", 
-                    default_value=False, 
-                    label_after = True, 
-                    inactive_color = '#D3D3D3', 
-                    active_color="#11567f", 
-                    track_color="#29B5E8"
-                    )
 
 st.subheader("Completeness")
 
-if (toggle_cpl):
+run_completeness_check = st.button("Run Completeness Check")
+
+if run_completeness_check:
     tbl = data_grabber.completeness_table()
 
     st.dataframe(tbl['tbl'].style.applymap(lambda x: "background-color: green; color: white;" if x == "OK" else ("background-color: orange; color: white;" if x == "NOT STREAMING" else "background-color: red; color: white;")))
