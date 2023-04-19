@@ -89,8 +89,8 @@ st.subheader("Completeness")
 if (toggle_cpl):
     tbl = data_grabber.completeness_table()
 
-st.dataframe(tbl['tbl'].style.applymap(lambda x: "background-color: green; color: white;" if x == "OK" else ("background-color: orange; color: white;" if x == "NOT STREAMING" else "background-color: red; color: white;")))
-st.write(tbl['ce'])
+    st.dataframe(tbl['tbl'].style.applymap(lambda x: "background-color: green; color: white;" if x == "OK" else ("background-color: orange; color: white;" if x == "NOT STREAMING" else "background-color: red; color: white;")))
+    st.write(tbl['ce'])
 
     
 
