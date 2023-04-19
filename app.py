@@ -76,7 +76,7 @@ if (toggle_charts):
 
 functions.space()
 toggle_cpl = tog.st_toggle_switch(label="Check for Completeness", 
-                    key="toggle_charts", 
+                    key="toggle_cpl", 
                     default_value=False, 
                     label_after = True, 
                     inactive_color = '#D3D3D3', 
