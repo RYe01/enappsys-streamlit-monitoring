@@ -105,15 +105,15 @@ def complete(url):
     data = data['data']
     
     df = pd.json_normalize(data)
-    print(df)
+    # print(df)
     return df
 
 @st.cache_data
 def completeness_table():
-    tbl = pd.DataFrame(columns=country_codes()) 
+    tbl = pd.DataFrame(columns=['de']) 
     
-    for cc in country_codes():
-        tbl[cc] = ["", "", ""]
+    # for cc in country_codes():
+    tbl['de'] = ["", "", ""]
         
     tbl.index = check_cat()
     
@@ -143,14 +143,16 @@ def completeness_table():
             
             link_list = list(set(link_list))
             for link in link_list:
-                if 'forecast' or 'day_ahead' or 'da_price' in link.lower():
-                    try:
-                        df = complete(link)
-                    except:
-                        continue
-                    print(df)
+                try:
+                    df = complete(link)
+                except:
+                    continue
+                if 'forecast' in link.lower() or 'day_ahead' in link.lower() or 'da_price' in link.lower():
+                    print(link.lower())
+                    # print(df)
                     if 'value' in df.columns:
                         if(df.isnull().values.any()):
+                            print('hello')
                             list_of_indexes = pd.isnull(df).any('value').nonzero()[0]
                             list_of_times = []
                             for index in list_of_indexes:
@@ -161,15 +163,15 @@ def completeness_table():
                     else:
                         country_errors[cc][link] = "Not streaming anymore!"
                 else:
-                    try:
-                        df = complete(link)
-                        end = datetime.now() - timedelta(hours=2)
-                        df = df[df['dateTime'] < end]
-                    except:
-                        continue
+                    
                     print(df)
                     if 'value' in df.columns:
+                        df['dateTime'] = pd.to_datetime(df['dateTime'])
+                        end = datetime.now() - timedelta(hours=2)
+                        df = df[df['dateTime'] < end]
+                        
                         if(df.isnull().values.any()):
+                            print('hello')
                             list_of_indexes = pd.isnull(df).any('value').nonzero()[0]
                             list_of_times = []
                             for index in list_of_indexes:
