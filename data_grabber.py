@@ -127,6 +127,7 @@ def completeness_table():
     
     for cat in tbl.index:
         for cc in tbl.columns:
+            
             count+=1
             print(f'{count}/{len(tbl.columns)*3}')
             
@@ -152,7 +153,6 @@ def completeness_table():
                     # print(df)
                     if 'value' in df.columns:
                         if(df.isnull().values.any()):
-                            print('hello')
                             list_of_indexes = pd.isnull(df).any('value').nonzero()[0]
                             list_of_times = []
                             for index in list_of_indexes:
