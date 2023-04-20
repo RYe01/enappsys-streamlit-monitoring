@@ -87,13 +87,25 @@ def trigger_to_save_history_of_completeness_before_update():
     );""")
 
     
-def insert_country_completeness(country_code, demand_state, solar_state, wind_state):
+def insert_country_completeness(country_code, states):
     db = connection()
     mycursor = db.cursor()
     
-    table_values_string = f"{country_code}, {demand_state}, {solar_state}, {wind_state}"
+    categories = fetch_all_categories()
+    categories_string = ", ".join(categories)
+
+    values = []
     
-    sql = f"INSERT INTO completeness (country_code, demand_state, solar_state, wind_state) VALUES ({table_values_string})"
+    for category in categories:
+        values.append(states[category])
+        
+    values_string = ", ".join(values)
+    
+    query = f"SELECT id FROM country_codes WHERE country_code = {country_code}"
+    mycursor.execute(query)
+    country_id = mycursor.fetchone()[0]
+    
+    sql = f"INSERT INTO completeness (country_code_id, {categories_string}) VALUES ({country_id}, {values_string})"
     
     mycursor.execute(sql)
     
