@@ -86,7 +86,7 @@ if run_completeness_check:
     st.dataframe(tbl['tbl'].style.applymap(lambda x: "background-color: green; color: white;" if x == "OK" else ("background-color: orange; color: white;" if x == "NOT STREAMING" else "background-color: red; color: white;")))
     st.write(tbl['ce'])
 
-    
+
 
 
 # ----- Dataset Specific ----- #
