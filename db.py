@@ -48,16 +48,15 @@ def create_base_completeness_table():
     db = connection()
     mycursor = db.cursor()
 
-    mycursor.execute("""CREATE TABLE completeness (
-        id INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
-        country_code_id INT UNSIGNED NOT NULL,
-        demand_state VARCHAR(255),
-        solar_state VARCHAR(255),
-        wind_state VARCHAR(255),
-        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-        updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-        FOREIGN KEY (country_code_id) REFERENCES country_codes(id)
-    );""")
+    categories = fetch_all_categories()
+    query = "CREATE TABLE completeness (id INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT, country_code_id INT UNSIGNED NOT NULL,"
+    
+    for category in categories:
+        query += f"{category}_state VARCHAR(255),"
+        
+    query += "created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, FOREIGN KEY (country_code_id) REFERENCES country_codes(id));"
+    
+    mycursor.execute(query)
     
     trigger_to_save_history_of_completeness_before_update()
     
@@ -65,15 +64,15 @@ def create_completeness_history_table():
     db = connection()
     mycursor = db.cursor()
     
-    mycursor.execute("""CREATE TABLE completeness_history (
-        id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-        country_code VARCHAR(2) NOT NULL,
-        demand_state VARCHAR(255),
-        solar_state VARCHAR(255),
-        wind_state VARCHAR(255),
-        updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-        INDEX (country_code)
-    );""")
+    categories = fetch_all_categories()
+    query = "CREATE TABLE completeness_history (id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, country_code VARCHAR(2) NOT NULL,"
+    
+    for category in categories:
+        query += f"{category}_state VARCHAR(255),"
+        
+    query += "updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, INDEX (country_code));"
+    
+    mycursor.execute(query)
     
 def trigger_to_save_history_of_completeness_before_update():
     db = connection()
@@ -131,12 +130,16 @@ def create_datatype_entity_tables():
             id INT PRIMARY KEY AUTO_INCREMENT,
             name VARCHAR(255) NOT NULL UNIQUE
         );
+    """)
 
+    mycursor.execute("""
         CREATE TABLE entities (
             id INT PRIMARY KEY AUTO_INCREMENT,
             name VARCHAR(255) NOT NULL
         );
+    """)
 
+    mycursor.execute("""
         CREATE TABLE datatype_entities (
             id INT PRIMARY KEY AUTO_INCREMENT,
             datatype_id INT NOT NULL,
@@ -144,14 +147,18 @@ def create_datatype_entity_tables():
             CONSTRAINT fk_datatype FOREIGN KEY (datatype_id) REFERENCES datatypes(id),
             CONSTRAINT fk_entity FOREIGN KEY (entity_id) REFERENCES entities(id)
         );
+    """)
 
+    mycursor.execute("""
         CREATE TABLE locations (
             id INT PRIMARY KEY AUTO_INCREMENT,
             country_code_id INT UNSIGNED NOT NULL,
             name VARCHAR(255) NOT NULL,
             FOREIGN KEY (country_code_id) REFERENCES country_codes(id)
         );
+    """)
 
+    mycursor.execute("""
         CREATE TABLE datatype_entity_locations (
             id INT PRIMARY KEY AUTO_INCREMENT,
             datatype_entity_id INT NOT NULL,
@@ -159,8 +166,7 @@ def create_datatype_entity_tables():
             CONSTRAINT fk_datatype_entity FOREIGN KEY (datatype_entity_id) REFERENCES datatype_entities(id),
             CONSTRAINT fk_location FOREIGN KEY (location_id) REFERENCES locations(id)
         );  
-    """, multi=True)
-    
+    """)
     
 def fetch_all_categories():
     db = connection()
@@ -174,21 +180,21 @@ def fetch_all_categories():
 
     db.close()
     
-    return categories
+    return category_list
 
 if __name__ == '__main__':
-    # countries = ['eu', 'al', 'at', 'ba', 'be', 'bg', 'ch', 'cz', 'de', 'dk', 'ee', 'es', 'fi', 'fr', 'gb', 'gr', 'hr', 'hu', 'isem', 'it', 'xk', 'lt', 'lv', 'me', 'mk', 'nl', 'no', 'pl', 'pt', 'ro', 'rs', 'se', 'si', 'sk']
-    # categories = ['demand', 'solar', 'wind']
+    countries = ['eu', 'al', 'at', 'ba', 'be', 'bg', 'ch', 'cz', 'de', 'dk', 'ee', 'es', 'fi', 'fr', 'gb', 'gr', 'hr', 'hu', 'isem', 'it', 'xk', 'lt', 'lv', 'me', 'mk', 'nl', 'no', 'pl', 'pt', 'ro', 'rs', 'se', 'si', 'sk']
+    all_categories = ['demand', 'solar', 'wind']
     
-    # create_country_codes_table()
-    # create_category_table()
+    create_country_codes_table()
+    create_category_table()
     
-    # for country in countries:
-    #     insert_new_country(country)
+    for country in countries:
+        insert_new_country(country)
     
-    # for category in categories:
-    #     insert_new_category(category)
+    for category in all_categories:
+        insert_new_category(category)
         
-    # create_base_completeness_table()
-    # create_completeness_history_table()
+    create_base_completeness_table()
+    create_completeness_history_table()
     create_datatype_entity_tables()
