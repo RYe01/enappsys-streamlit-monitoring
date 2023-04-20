@@ -122,6 +122,46 @@ def update_country_completeness(country_code_with_values):
     db.commit()
     print(mycursor.rowcount, "record inserted.")
     
+def create_datatype_entity_tables():
+    db = connection()
+    mycursor = db.cursor()
+    
+    mycursor.execute("""
+        CREATE TABLE datatypes (
+            id INT PRIMARY KEY AUTO_INCREMENT,
+            name VARCHAR(255) NOT NULL UNIQUE
+        );
+
+        CREATE TABLE entities (
+            id INT PRIMARY KEY AUTO_INCREMENT,
+            name VARCHAR(255) NOT NULL
+        );
+
+        CREATE TABLE datatype_entities (
+            id INT PRIMARY KEY AUTO_INCREMENT,
+            datatype_id INT NOT NULL,
+            entity_id INT NOT NULL,
+            CONSTRAINT fk_datatype FOREIGN KEY (datatype_id) REFERENCES datatypes(id),
+            CONSTRAINT fk_entity FOREIGN KEY (entity_id) REFERENCES entities(id)
+        );
+
+        CREATE TABLE locations (
+            id INT PRIMARY KEY AUTO_INCREMENT,
+            country_code_id INT UNSIGNED NOT NULL,
+            name VARCHAR(255) NOT NULL,
+            FOREIGN KEY (country_code_id) REFERENCES country_codes(id)
+        );
+
+        CREATE TABLE datatype_entity_locations (
+            id INT PRIMARY KEY AUTO_INCREMENT,
+            datatype_entity_id INT NOT NULL,
+            location_id INT NOT NULL,
+            CONSTRAINT fk_datatype_entity FOREIGN KEY (datatype_entity_id) REFERENCES datatype_entities(id),
+            CONSTRAINT fk_location FOREIGN KEY (location_id) REFERENCES locations(id)
+        );  
+    """, multi=True)
+    
+    
 def fetch_all_categories():
     db = connection()
     mycursor = db.cursor()
@@ -151,4 +191,4 @@ if __name__ == '__main__':
         
     # create_base_completeness_table()
     # create_completeness_history_table()
-    print('idle')
+    create_datatype_entity_tables()
