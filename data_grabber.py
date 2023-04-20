@@ -69,6 +69,7 @@ def country_codes():
 def check_cat():
     return ['demand', 'solar', 'wind']
 
+
 def grab_mappings():
     # creating folder for chartmapping json files
     if (not os.path.exists("chart_mappings_per_country")):
