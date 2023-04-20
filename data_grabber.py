@@ -11,6 +11,8 @@ from urllib.request import urlopen
 from datetime import datetime, timedelta
 from stqdm import stqdm
 
+import db
+
 # .env file holds the pass key for imports
 config = dotenv_values(".env")
 pass_code = config["PASS"]
