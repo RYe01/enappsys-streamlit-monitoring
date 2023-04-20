@@ -3,3 +3,4 @@
 __pycache__
 .env
 chart_mappings_per_country
+find.py
