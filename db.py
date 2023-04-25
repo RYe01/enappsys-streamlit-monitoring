@@ -54,7 +54,7 @@ def create_base_completeness_table():
     for category in categories:
         query += f"{category}_state VARCHAR(255),"
         
-    query += "created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, FOREIGN KEY (country_code_id) REFERENCES country_codes(id));"
+    query += "created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, FOREIGN KEY (country_code_id) REFERENCES country_codes(id));"
     
     mycursor.execute(query)
     
@@ -133,12 +133,13 @@ def update_country_completeness(country_code_with_values):
             set_values.append(f"completeness.{type}_state = '{value}'")
             
         set_values_string = ", ".join(set_values)
+        print(set_values_string)
         
         mycursor.execute(f"""
             UPDATE completeness
-            JOIN country_codes ON completeness.country_code_id = country_codes.id
+            JOIN country_codes on 'completeness.country_code_id' = country_codes.id
             SET {set_values_string}
-            WHERE country_codes.id = {cc_id};
+            WHERE 'completeness.country_code_id' = {cc_id};
         """)
 
         db.commit()

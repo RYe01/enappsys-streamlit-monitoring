@@ -108,7 +108,7 @@ def complete(url):
     data = data['data']
     
     df = pd.json_normalize(data)
-    print(df)
+
     return df
 
 @st.cache_data
@@ -134,6 +134,7 @@ def completeness_table():
             
             count+=1
             print(f'{count}/{len(tbl.columns)*3}')
+            print(f'{cc} - {cat}')
             
             link_list = []
             is_error = False
@@ -153,8 +154,7 @@ def completeness_table():
                 except:
                     continue
                 if 'forecast' in link.lower() or 'day_ahead' in link.lower() or 'da_price' in link.lower():
-                    print(link.lower())
-                    # print(df)
+                    
                     if 'value' in df.columns:
                         if(df.isnull().values.any()):
                             list_of_indexes = pd.isnull(df).any('value').nonzero()[0]
@@ -168,14 +168,12 @@ def completeness_table():
                         country_errors[cc][link] = "Not streaming anymore!"
                 else:
                     
-                    print(df)
                     if 'value' in df.columns:
                         df['dateTime'] = pd.to_datetime(df['dateTime'])
                         end = datetime.now() - timedelta(hours=2)
                         df = df[df['dateTime'] < end]
                         
                         if(df.isnull().values.any()):
-                            print('hello')
                             list_of_indexes = pd.isnull(df).any('value').nonzero()[0]
                             list_of_times = []
                             for index in list_of_indexes:
@@ -203,12 +201,13 @@ def completeness_table():
 
 
 if __name__ == '__main__':
-    cplt = completeness_table()
-    tbl_dict = cplt['tbl_dict']
-    country_errors = cplt['ce']
-    country_code_list = cplt['tbl_columns']
+    # cplt = completeness_table()
+    # tbl_dict = cplt['tbl_dict']
+    # country_errors = cplt['ce']
+    # country_code_list = cplt['tbl_columns']
     
     # for cc in country_code_list:
     #     db.insert_country_completeness(cc, tbl_dict)
+    tbl_dict = {'eu': {'demand': 'NOT STREAMING', 'solar': 'NOT STREAMING', 'wind': 'NOT STREAMING'}, 'al': {'demand': 'OK', 'solar': 'OK', 'wind': 'OK'}, 'at': {'demand': 'OK', 'solar': 'OK', 'wind': 'NOT STREAMING'}, 'ba': {'demand': 'OK', 'solar': 'OK', 'wind': 'OK'}, 'be': {'demand': 'OK', 'solar': 'OK', 'wind': 'NOT STREAMING'}, 'bg': {'demand': 'OK', 'solar': 'NOT STREAMING', 'wind': 'NOT STREAMING'}, 'ch': {'demand': 'OK', 'solar': 'OK', 'wind': 'NOT STREAMING'}, 'cz': {'demand': 'OK', 'solar': 'OK', 'wind': 'NOT STREAMING'}, 'de': {'demand': 'OK', 'solar': 'OK', 'wind': 'NOT STREAMING'}, 'dk': {'demand': 'OK', 'solar': 'NOT STREAMING', 'wind': 'NOT STREAMING'}, 'ee': {'demand': 'OK', 'solar': 'OK', 'wind': 'OK'}, 'es': {'demand': 'NOT STREAMING', 'solar': 'NOT STREAMING', 'wind': 'NOT STREAMING'}, 'fi': {'demand': 'OK', 'solar': 'OK', 'wind': 'OK'}, 'fr': {'demand': 'NOT STREAMING', 'solar': 'NOT STREAMING', 'wind': 'NOT STREAMING'}, 'gb': {'demand': 'NOT STREAMING', 'solar': 'NOT STREAMING', 'wind': 'NOT STREAMING'}, 'gr': {'demand': 'OK', 'solar': 'OK', 'wind': 'NOT STREAMING'}, 'hr': {'demand': 'OK', 'solar': 'OK', 'wind': 'NOT STREAMING'}, 'hu': {'demand': 'OK', 'solar': 'OK', 'wind': 'OK'}, 'isem': {'demand': 'NOT STREAMING', 'solar': 'NOT STREAMING', 'wind': 'NOT STREAMING'}, 'it': {'demand': 'NOT STREAMING', 'solar': 'NOT STREAMING', 'wind': 'NOT STREAMING'}, 'xk': {'demand': 'NOT STREAMING', 'solar': 'NOT STREAMING', 'wind': 'NOT STREAMING'}, 'lt': {'demand': 'OK', 'solar': 'OK', 'wind': 'OK'}, 'lv': {'demand': 'NOT STREAMING', 'solar': 'NOT STREAMING', 'wind': 'NOT STREAMING'}, 'me': {'demand': 'OK', 'solar': 'OK', 'wind': 'OK'}, 'mk': {'demand': 'NOT STREAMING', 'solar': 'NOT STREAMING', 'wind': 'NOT STREAMING'}, 'nl': {'demand': 'NOT STREAMING', 'solar': 'NOT STREAMING', 'wind': 'NOT STREAMING'}, 'no': {'demand': 'NOT STREAMING', 'solar': 'NOT STREAMING', 'wind': 'NOT STREAMING'}, 'pl': {'demand': 'NOT STREAMING', 'solar': 'NOT STREAMING', 'wind': 'NOT STREAMING'}, 'pt': {'demand': 'NOT STREAMING', 'solar': 'NOT STREAMING', 'wind': 'NOT STREAMING'}, 'ro': {'demand': 'OK', 'solar': 'OK', 'wind': 'OK'}, 'rs': {'demand': 'OK', 'solar': 'OK', 'wind': 'OK'}, 'se': {'demand': 'NOT STREAMING', 'solar': 'NOT STREAMING', 'wind': 'NOT STREAMING'}, 'si': {'demand': 'OK', 'solar': 'NOT STREAMING', 'wind': 'NOT STREAMING'}, 'sk': {'demand': 'NOT STREAMING', 'solar': 'NOT STREAMING', 'wind': 'NOT STREAMING'}}
     db.update_country_completeness(tbl_dict)
     
