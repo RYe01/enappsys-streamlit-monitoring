@@ -99,8 +99,9 @@ tbl.index = db.fetch_all_categories()
 st.dataframe(tbl.style.applymap(lambda x: "background-color: green; color: white;" if x == "OK" else ("background-color: orange; color: white;" if x == "NOT STREAMING" else "background-color: red; color: white;")))
 
 if run_completeness_check:
-    country_errors = data_grabber.completeness_table()['ce']
-    st.write(country_errors)
+    db.update_country_completeness(data_grabber.completeness_table()['tbl_dict'])
+    # country_errors = data_grabber.completeness_table()['ce']
+    # st.write(country_errors)
 
 
 

@@ -118,7 +118,6 @@ def insert_country_completeness(country_code, states):
 def update_country_completeness(country_code_with_values):
     
     country_code_ids = fetch_country_code_ids()
-    categories = fetch_all_categories()
     
     for cc_id in country_code_ids:
         for key in country_code_with_values.keys():
@@ -129,19 +128,22 @@ def update_country_completeness(country_code_with_values):
     db = connection()
     mycursor = db.cursor()
     
-    query = "UPDATE completeness SET "
-    for country_code_id in country_code_with_values.keys():
-        for category in categories:
-            query += f"{category}_state = CASE "
-            for cat, value in country_code_with_values[country_code_id].items():
-                query += f"WHEN country_code_id = {country_code_id} THEN '{value}' "
-            query += f"ELSE {category}_state END, "
-        cc_ids = ', '.join(str(e) for e in country_code_with_values.keys())
-        query += f"updated_at = NOW() WHERE country_code_id IN ({cc_ids}))"
+    for cc_id, values in country_code_with_values.items():
+        
+        set_values = []
+        for type, value in values.items():
+            set_values.append(f"{type}_state = '{value}'")
+            
+        set_values_string = ", ".join(set_values)
+        
+        mycursor.execute(f"""
+            UPDATE completeness
+            SET {set_values_string}
+            WHERE country_code_id = {cc_id};
+        """)
+
+        db.commit()
     
-    mycursor.execute(query)
-    
-    db.commit()
     print(mycursor.rowcount, "record inserted.")
     
 def create_datatype_entity_tables():
