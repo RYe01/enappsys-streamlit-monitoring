@@ -90,18 +90,21 @@ def trigger_to_save_history_of_completeness_before_update():
 def insert_country_completeness(country_code, states):
     db = connection()
     mycursor = db.cursor()
-    
-    categories = fetch_all_categories()
-    categories_string = ", ".join(categories)
 
     values = []
+    categories = []
     
-    for category in categories:
-        values.append(states[category])
+    for state, value in states[country_code].items():
+        categories.append(state)
+        value = f"'{value}'"
+        values.append(value)
         
+    categories = [category + "_state" for category in categories]
+    
+    categories_string = ", ".join(categories)
     values_string = ", ".join(values)
     
-    query = f"SELECT id FROM country_codes WHERE country_code = {country_code}"
+    query = f"SELECT id FROM country_codes WHERE country_code = '{country_code}'"
     mycursor.execute(query)
     country_id = mycursor.fetchone()[0]
     
@@ -114,19 +117,27 @@ def insert_country_completeness(country_code, states):
 
 def update_country_completeness(country_code_with_values):
     
+    country_code_ids = fetch_country_code_ids()
     categories = fetch_all_categories()
     
+    for cc_id in country_code_ids:
+        for key in country_code_with_values.keys():
+            if key == cc_id[1]:
+                country_code_with_values[cc_id[0]]=country_code_with_values[key]
+                del country_code_with_values[key]
+        
     db = connection()
     mycursor = db.cursor()
     
     query = "UPDATE completeness SET "
-    for country_code in country_code_with_values.keys():
+    for country_code_id in country_code_with_values.keys():
         for category in categories:
             query += f"{category}_state = CASE "
-            for country_code, value in country_code_with_values[country_code].items():
-                query += f"WHEN country_code = '{country_code}' THEN '{value[category]}' "
+            for cat, value in country_code_with_values[country_code_id].items():
+                query += f"WHEN country_code_id = {country_code_id} THEN '{value}' "
             query += f"ELSE {category}_state END, "
-        query += "updated_at = NOW() WHERE country_code IN ('" + "', '".join(country_code_with_values.keys()) + "')"
+        cc_ids = ', '.join(str(e) for e in country_code_with_values.keys())
+        query += f"updated_at = NOW() WHERE country_code_id IN ({cc_ids}))"
     
     mycursor.execute(query)
     
@@ -194,19 +205,57 @@ def fetch_all_categories():
     
     return category_list
 
+def fetch_all_country_codes():
+    db = connection()
+    mycursor = db.cursor()
+    mycursor.execute("SELECT country_code FROM country_codes")
+    country_codes = mycursor.fetchall()
+
+    country_code_list = []
+    for cc in country_codes:
+        country_code_list.append(cc[0])
+
+    db.close()
+    
+    return country_code_list
+
+def fetch_completeness_table():
+    db = connection()
+    mycursor = db.cursor()
+    
+    categories = fetch_all_categories()
+    categories = ["completeness." + category + "_state" for category in categories]
+    
+    categories_string = ", ".join(categories)
+    
+    mycursor.execute(f"SELECT country_codes.country_code, {categories_string} FROM completeness INNER JOIN country_codes ON completeness.country_code_id = country_codes.id")
+    data = mycursor.fetchall()
+    
+    return data
+
+def fetch_country_code_ids():
+    db = connection()
+    mycursor = db.cursor()
+    
+    mycursor.execute("SELECT id, country_code FROM country_codes")
+    data = mycursor.fetchall()
+    
+    return data
+
 if __name__ == '__main__':
-    countries = ['eu', 'al', 'at', 'ba', 'be', 'bg', 'ch', 'cz', 'de', 'dk', 'ee', 'es', 'fi', 'fr', 'gb', 'gr', 'hr', 'hu', 'isem', 'it', 'xk', 'lt', 'lv', 'me', 'mk', 'nl', 'no', 'pl', 'pt', 'ro', 'rs', 'se', 'si', 'sk']
-    all_categories = ['demand', 'solar', 'wind']
+    # countries = ['eu', 'al', 'at', 'ba', 'be', 'bg', 'ch', 'cz', 'de', 'dk', 'ee', 'es', 'fi', 'fr', 'gb', 'gr', 'hr', 'hu', 'isem', 'it', 'xk', 'lt', 'lv', 'me', 'mk', 'nl', 'no', 'pl', 'pt', 'ro', 'rs', 'se', 'si', 'sk']
+    # all_categories = ['demand', 'solar', 'wind']
     
-    create_country_codes_table()
-    create_category_table()
+    # create_country_codes_table()
+    # create_category_table()
     
-    for country in countries:
-        insert_new_country(country)
+    # for country in countries:
+    #     insert_new_country(country)
     
-    for category in all_categories:
-        insert_new_category(category)
+    # for category in all_categories:
+    #     insert_new_category(category)
         
-    create_base_completeness_table()
-    create_completeness_history_table()
-    create_datatype_entity_tables()
+    # create_base_completeness_table()
+    # create_completeness_history_table()
+    # create_datatype_entity_tables()
+    print("")

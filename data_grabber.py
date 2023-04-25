@@ -115,6 +115,7 @@ def complete(url):
 def completeness_table():
     tbl = pd.DataFrame(columns=country_codes()) 
     
+
     for cc in country_codes():
         tbl[cc] = ["", "", ""]
         
@@ -192,13 +193,22 @@ def completeness_table():
                     tbl.at[cat, cc] = 'NOT STREAMING'
             else:
                 tbl.at[cat, cc] = 'OK'
-            
     
-    return {'tbl': tbl, 'ce': country_errors}
+    tbl_dict = tbl.to_dict()
+    tbl_columns = tbl.columns
+    
+    print(tbl_dict)        
+    
+    return {'tbl_dict': tbl_dict, 'ce': country_errors, 'tbl_columns': tbl_columns}
 
 
 if __name__ == '__main__':
-    # grab_mappings()
-    # for k,v in get_entities_of('demand', 'nl', '202303300000', '202303310000').items():
-    #     print(k, v)
-    complete("https://appqa.enappsys.com/jsonapi?entities=SL.SLOVENIA&minavmax=False&pass=194176176237229242180181180181163&res=qh&timezone=CET&type=entsoe_actual_total_load&user=andras.rozs&start=20230416142939&end=20230417142939")
+    cplt = completeness_table()
+    tbl_dict = cplt['tbl_dict']
+    country_errors = cplt['ce']
+    country_code_list = cplt['tbl_columns']
+    
+    # for cc in country_code_list:
+    #     db.insert_country_completeness(cc, tbl_dict)
+    db.update_country_completeness(tbl_dict)
+    

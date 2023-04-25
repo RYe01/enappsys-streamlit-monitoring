@@ -1,3 +1,4 @@
+-- Active: 1681932757655@@145.14.156.52@3306@u375301929_monitoring
 import streamlit as st
 import pandas as pd
 import plotly.express as px
@@ -9,6 +10,7 @@ from datetime import datetime, timedelta
 
 import functions
 import data_grabber
+import db
 
 
 st.set_page_config(layout = "wide", page_icon = 'favicon.ico', page_title='EnAppSys Monitoring')
@@ -79,12 +81,27 @@ functions.space()
 st.subheader("Completeness")
 
 run_completeness_check = st.button("Run Completeness Check")
+    
+tbl_data = db.fetch_completeness_table()
+
+tbl = pd.DataFrame(columns=db.fetch_all_country_codes())
+
+for data in tbl_data:
+    for i in range(len(data)):
+        if i == 0:
+            tbl[data[i]] = ["", "", ""]
+            cc = data[i]
+        else:
+            tbl.at[tbl.index[i-1], cc] = data[i]
+            
+tbl.index = db.fetch_all_categories()
+    
+
+st.dataframe(tbl.style.applymap(lambda x: "background-color: green; color: white;" if x == "OK" else ("background-color: orange; color: white;" if x == "NOT STREAMING" else "background-color: red; color: white;")))
 
 if run_completeness_check:
-    tbl = data_grabber.completeness_table()
-
-    st.dataframe(tbl['tbl'].style.applymap(lambda x: "background-color: green; color: white;" if x == "OK" else ("background-color: orange; color: white;" if x == "NOT STREAMING" else "background-color: red; color: white;")))
-    st.write(tbl['ce'])
+    country_errors = data_grabber.completeness_table()['ce']
+    st.write(country_errors)
 
 
 
