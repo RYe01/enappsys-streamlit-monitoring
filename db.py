@@ -118,17 +118,15 @@ def insert_country_completeness(country_code, states):
 def update_country_completeness(country_code_with_values):
     
     country_code_ids = fetch_country_code_ids()
-    
-    for cc_id in country_code_ids:
-        for key in country_code_with_values.keys():
-            if key == cc_id[1]:
-                country_code_with_values[cc_id[0]]=country_code_with_values[key]
-                del country_code_with_values[key]
-        
+
     db = connection()
     mycursor = db.cursor()
     
-    for cc_id, values in country_code_with_values.items():
+    for cc, values in country_code_with_values.items():
+        
+        for cc_n_id in country_code_ids:
+            if cc_n_id[1] == cc:
+                cc_id = cc_n_id[0]
         
         set_values = []
         for type, value in values.items():
