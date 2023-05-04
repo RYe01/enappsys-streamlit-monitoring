@@ -130,16 +130,17 @@ def update_country_completeness(country_code_with_values):
         
         set_values = []
         for type, value in values.items():
-            set_values.append(f"completeness.{type}_state = '{value}'")
+            set_values.append(f"{type}_state = '{value}'")
             
         set_values_string = ", ".join(set_values)
         print(set_values_string)
         
+        print(cc_id)
+        
         mycursor.execute(f"""
             UPDATE completeness
-            JOIN country_codes on 'completeness.country_code_id' = country_codes.id
-            SET {set_values_string}
-            WHERE 'completeness.country_code_id' = {cc_id};
+            SET {set_values_string}, updated_at = NOW()
+            WHERE country_code_id = {cc_id};
         """)
 
         db.commit()
